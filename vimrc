@@ -29,7 +29,7 @@ Plug 'jlanzarotta/bufexplorer'
 
 " add by Ted 
 Plug 'tomasr/molokai'
-Plug 'nanotech/jellybeans.vim'
+" Plug 'nanotech/jellybeans.vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -60,10 +60,12 @@ colorscheme molokai
 "-----------------------------------------------------------------------------------
 set nu "显示行号
 syntax on "开启语法高亮
+set fdm=syntax
 set guifont=courier_new:h18  "使用字体
 set ruler "显示光标当前位置
 set history=100 "历史命令保存行数
 set autoread "当文件被外部改变时自动读取
+set tags=./tags,tags
  
  
 "取消自动备份及产生swp文件
@@ -108,7 +110,8 @@ language message zh_CN.UTF-8
 set cursorline "突出显示当前行
  
 "启用鼠标
-set mouse=a
+" set mouse=a
+" set mouse-=a
 set selection=exclusive
 set selectmode=mouse,key
 set laststatus=2  "显示状态栏
@@ -162,10 +165,11 @@ let Tlist_File_Fold_Auto_Close = 1 "当同时显示多个文件中的tag时，�
 let Tlist_GainFocus_On_ToggleOpen = 0  "Taglist窗口打开时，立刻切换为有焦点状态
 "let Tlist_WinWidth = 32  "设置窗体宽度为32，可以根据自己喜好设置
 let Tlist_Use_SingleClick=1  "设置单击tag就跳到tag定义的位置
-map <F8> :TlistToggle<CR> "热键设置
-nmap <F9> <Esc>:!ctags -R *<CR>  "生成一个tags文件
+"nmap <F8> :TlistToggle<CR> "热键设置
+noremap <silent> <F9> :TlistToggle<cr>
+" nmap <F9> <Esc>:!ctags -R *<CR>  "生成一个tags文件
 let Tlist_Show_Menu = 0 "菜单栏出现tags,可以选择sort by name 或 order可以 reflash menu,基本没有什么用
-"nnoremap <silent> <F8> :TlistToggle<CR>
+" noremap <silent> <F8> :TlistToggle<CR>
 "-----------------------------------------------------------------------------------
 " Settings for UltiSnips
 "-----------------------------------------------------------------------------------
