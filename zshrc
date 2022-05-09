@@ -10,6 +10,7 @@ export ZSH="/home/kuoted/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="random" # (...please let it be pie... please be some pie..)
+#ZSH_THEME=("crcandy jonathan") # (...please let it be pie... please be some pie..)
 # ZSH_THEME_RANDOM_BLACKLIST=( "cloud" )
 ZSH_THEME_RANDOM_IGNORED=("emotty cloud,sammy,fletcherm, edvardm, humza, adben,blinks, evan, agnoster, emotty, humza")
 
@@ -18,7 +19,7 @@ ZSH_THEME_RANDOM_IGNORED=("emotty cloud,sammy,fletcherm, edvardm, humza, adben,b
 # a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
- ZSH_THEME_RANDOM_CANDIDATES=( "jonathan" "agnoster" "fox" )
+ ZSH_THEME_RANDOM_CANDIDATES=( "jonathan" "agnoster" "fox" "crcandy")
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -87,6 +88,7 @@ unsetopt INC_APPEND_HISTORY
 unsetopt SHARE_HISTORY
 
 setopt nonomatch
+unsetopt nomatch
 
 source $ZSH/oh-my-zsh.sh
 

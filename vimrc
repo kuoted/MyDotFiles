@@ -60,7 +60,7 @@ colorscheme molokai
 "-----------------------------------------------------------------------------------
 set nu "显示行号
 syntax on "开启语法高亮
-set fdm=syntax
+" set fdm=syntax
 set guifont=courier_new:h18  "使用字体
 set ruler "显示光标当前位置
 set history=100 "历史命令保存行数
