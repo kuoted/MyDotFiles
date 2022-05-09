@@ -12,22 +12,14 @@ export ZSH="/home/kuoted/.oh-my-zsh"
 ZSH_THEME="random" # (...please let it be pie... please be some pie..)
 #ZSH_THEME=("crcandy jonathan") # (...please let it be pie... please be some pie..)
 # ZSH_THEME_RANDOM_BLACKLIST=( "cloud" )
-<<<<<<< HEAD
 ZSH_THEME_RANDOM_IGNORED=("emotty cloud,sammy,fletcherm, edvardm, humza, adben,blinks, evan, agnoster, emotty, humza")
-=======
-ZSH_THEME_RANDOM_IGNORED=("cloud,sammy,fletcherm, edvardm, humza, adben,blinks, evan, agnoster, emotty,lambda")
->>>>>>> f7465f7 (update vimrc and zshrc)
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
-<<<<<<< HEAD
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
  ZSH_THEME_RANDOM_CANDIDATES=( "jonathan" "agnoster" "fox" "crcandy")
-=======
-# ZSH_THEME_RANDOM_CANDIDATES=( "crcandy" )
->>>>>>> f7465f7 (update vimrc and zshrc)
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
