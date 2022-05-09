@@ -1,5 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/kuoted/.oh-my-zsh"
@@ -10,13 +11,14 @@ export ZSH="/home/kuoted/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="random" # (...please let it be pie... please be some pie..)
 # ZSH_THEME_RANDOM_BLACKLIST=( "cloud" )
-ZSH_THEME_RANDOM_IGNORED=("cloud,sammy,fletcherm, edvardm, humza, adben,blinks, evan, agnoster, emotty")
+ZSH_THEME_RANDOM_IGNORED=("emotty cloud,sammy,fletcherm, edvardm, humza, adben,blinks, evan, agnoster, emotty, humza")
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+ ZSH_THEME_RANDOM_CANDIDATES=( "jonathan" "agnoster" "fox" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -73,7 +75,11 @@ ZSH_THEME_RANDOM_IGNORED=("cloud,sammy,fletcherm, edvardm, humza, adben,blinks, 
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # plugins=(git autojump zsh-autosuggestions)
-plugins=(git z zsh-autosuggestions)
+plugins=(git z zsh-autosuggestions sudo)
+
+
+# install autosuggestions
+# git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 
 
@@ -114,3 +120,7 @@ alias cat=batcat
 
 export HIST_STAMPS="yyyy-mm-dd"
 
+
+### debug for ROS2
+export RMW_IMPLEMENTATION=rmw_fastrtps_cpp
+#source /home/kuoted/01_work/23_ros2/galactic2/04_GEEP50_0002_AppFw/install/setup.zsh
