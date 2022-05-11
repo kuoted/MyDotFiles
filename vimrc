@@ -105,8 +105,8 @@ set fencs=utf-8,usc-bom,euc-jp,gb18030,gbk,gb2312,cp936
 "设定编码
 "set enc=utf-8
 set fileencodings=ucs-bom,utf-8,chinese
-set langmenu=zh_CN.UTF-8
-language message zh_CN.UTF-8
+"set langmenu=zh_CN.UTF-8
+"language message zh_CN.UTF-8
 set cursorline "突出显示当前行
  
 "启用鼠标
