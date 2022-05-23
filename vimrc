@@ -18,6 +18,7 @@ Plug 'Shougo/neocomplete'
 "Plug 'luochen1990/rainbow'
 
 Plug 'esukram/vim-taglist'
+Plug 'othree/xml.vim'
 "Plug 'vim-scripts/peaksea'
  
 "三个snippet的插件同时安装 supertab 用来防止使用 tab 展开 snippet 与 youcompleteme 的 tab 补全发生冲突
