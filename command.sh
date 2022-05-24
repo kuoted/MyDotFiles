@@ -7,3 +7,6 @@ docker run -it --name 03_mdc_simulator -p 2225:22 -v /home/kuoted/04_ubuntu1804:
 colcon build --symlink-install --event-handlers compile_commands+ console_cohesion- --cmake-args -D -DCMAKE_EXPORT_COMPILE_COMMANDS=1 --cmake-force-configure
 
 sudo dpkg-reconfigure dash
+
+export SOMEIP_CONFIG_FILE=~/05_mdc/02_x86_emulator/PLATFORM_Sample/outputcfg/MdcADpGeaMachine/someipd-InnerEthernetCommConnector.json 
+export CM_CONFIG_FILE_PATH=~/05_mdc/02_x86_emulator/PLATFORM_Sample/outputcfg/MdcADpGeaMachine/someip_method_kpoll_server_sample/SomeipMethodKpollServerSampleProcess
