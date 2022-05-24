@@ -6,12 +6,6 @@
   "presentation": "group",
   "configurations": [
     {
-      "name": "ROS: Launch via ssh",
-      "type": "ros",
-      "request": "launch",
-      "target": "${workspaceFolder}/04_GEEP50_0002_AppFw/install/cupcake/lib/cupcake/cupcake",
-    },
-    {
       // Example launch of a python file
       "name": "Python: Current File (Integrated Terminal)",
       "type": "python",
@@ -24,33 +18,12 @@
         "enable": true
       }
     },
-    // Example gdb launch of a ros executable
-    {
-      "name": "(gdb) Launch cupcake on Ubuntu locally",
-      "type": "cppdbg",
-      "request": "launch",
-      "program": "${workspaceFolder}/04_GEEP50_0002_AppFw/install/cupcake/lib/cupcake/${input:program}",
-      "args": [],
-      //  "preLaunchTask": "colcon: build(debug)",
-      "stopAtEntry": true,
-      "cwd": "${workspaceFolder}",
-      "externalConsole": false,
-      "MIMode": "gdb",
-      "setupCommands": [
-        {
-          "description": "Enable pretty-printing for gdb",
-          "text": "-enable-pretty-printing",
-          "ignoreFailures": true
-        }
-      ],
-      "envFile": "${workspaceFolder}/.vscode/env_launch_inDocker"
-    },
     {
       //launch debug via SSH on remote,
       "name": "(gdb) Launch cupcake which located in Docker",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/04_GEEP50_0002_AppFw/install/cupcake/lib/cupcake/cupcake",
+      "program": "${workspaceFolder}/04_ccu/02_x86_emulator/PLATFORM_Sample/build/modules/cm_sample/someip_method_kpoll_sample/client/someip_method_kpoll_client_sample",
       "args": [],
       "stopAtEntry": true,
       "cwd": "${workspaceFolder}",
@@ -64,27 +37,6 @@
         },
       ],
       "envFile": "${workspaceFolder}/.vscode/env_launch_inDocker"
-    },
-    {
-      //launch debug via SSH on remote virtualbox,
-      "name": "(gdb) Launch cupcake via ssh on Remote",
-      "type": "cppdbg",
-      "request": "launch",
-      //  "preLaunchTask": "colcon: build(debug)",
-      "program": "${workspaceFolder}/04_GEEP50_0002_AppFw/install/cupcake/lib/cupcake/cupcake",
-      "args": [],
-      "stopAtEntry": true,
-      "cwd": "${workspaceFolder}",
-      "externalConsole": false,
-      "MIMode": "gdb",
-      "setupCommands": [
-        {
-          "description": "Enable pretty-printing for gdb",
-          "text": "-enable-pretty-printing",
-          "ignoreFailures": true
-        },
-      ],
-      "envFile": "${workspaceFolder}/.vscode/env_launch_inVirtual"
     },
   ],
 }
