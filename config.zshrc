@@ -118,7 +118,7 @@ source $ZSH/oh-my-zsh.sh
  alias zshconfig="mate ~/.zshrc"
  alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias cat=batcat
+# alias cat=batcat
 
 export HIST_STAMPS="yyyy-mm-dd"
 

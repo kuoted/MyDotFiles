@@ -194,8 +194,8 @@ SpaceBeforeParensOptions:
   AfterIfMacros:   true
   AfterOverloadedOperator: true
   BeforeNonEmptyParentheses: false
-  AfterRequiresInClause: true
-  AfterRequiresInExpression: false
+  #AfterRequiresInClause: true
+  #AfterRequiresInExpression: false
   BeforeNonEmptyParentheses: false
 SpaceAroundPointerQualifiers: Default
 SpaceBeforeRangeBasedForLoopColon: true
