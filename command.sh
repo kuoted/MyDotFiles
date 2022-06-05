@@ -6,7 +6,7 @@ docker run -it --name 03_mdc_simulator -p 2225:22 -v /home/kuoted/04_ubuntu1804:
 
 docker run -it --name 04_ccu_sim -p 2226:22 -v /home/kuoted/04_ccu:/home/kuoted/04_ccu -v /home/kuoted/00_shared_common:/home/kuoted/00_shared_common  cvsuser/ubuntu1804:mdc610_x86_simulator
 docker run -it --name 05_mdc_sim -p 2227:22 -v /home/kuoted/05_mdc:/home/kuoted/05_mdc -v /home/kuoted/00_shared_common:/home/kuoted/00_shared_common  cvsuser/ubuntu1804:mdc610_x86_simulator
-
+docker run -it --name 05_mdc_sim -p 2228:22 -v  /home/kuoted/04_ubuntu1804:/home/kuoted/04_ubuntu1804 -v /home/kuoted/00_shared_common:/home/kuoted/00_shared_common cvsuser/mdc610_x86_simulator
 
 colcon build --symlink-install --event-handlers compile_commands+ console_cohesion- --cmake-args -D -DCMAKE_EXPORT_COMPILE_COMMANDS=1 --cmake-force-configure
 

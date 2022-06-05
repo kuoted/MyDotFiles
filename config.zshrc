@@ -125,4 +125,5 @@ export HIST_STAMPS="yyyy-mm-dd"
 
 ### debug for ROS2
 export RMW_IMPLEMENTATION=rmw_fastrtps_cpp
+export DEFAULT_RMW_IMPLEMENTATION=rmw_fastrtps_cpp
 #source /home/kuoted/01_work/23_ros2/galactic2/04_GEEP50_0002_AppFw/install/setup.zsh
