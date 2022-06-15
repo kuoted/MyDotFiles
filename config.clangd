@@ -1,4 +1,21 @@
-CompileFlags:                     # Tweak the parse settings
-  Add: [-isystem /usr/include ]             # treat all files as C++, enable more warnings
-  Remove: -std=gnu11                     # strip all other warning-related flags
-  # Compiler: clang++               # Change argv[0] of compile flags to `clang++`
+# CompileFlags:    # Tweak the parse settings
+#   Add: [ -xc++ -isystem /usr/include -std=c++17]             # treat all files as C++, enable more warnings
+#   #Remove: -std=gnu11                     # strip all other warning-related flags
+#   Compiler: clang++               # Change argv[0] of compile flags to `clang++`
+
+
+CompileFlags:
+  # Treat code as C++, use C++17 standard, enable more warnings.
+  Add: [-xc++, -std=c++17, -Wall, -Wno-missing-prototypes]
+  # Remove extra warnings specified in compile commands.
+  # Single value is also acceptable, same as "Remove: [-mabi]"
+  Remove: -mabi
+  Compiler: clang++-15               # Change argv[0] of compile flags to `clang++`
+
+Diagnostics:
+  # Tweak Clang-Tidy checks.
+  ClangTidy:
+    Add: [performance*, modernize*, readability*]
+    Remove: [modernize-use-trailing-return-type]
+    CheckOptions:
+      readability-identifier-naming.VariableCase: CamelCase
