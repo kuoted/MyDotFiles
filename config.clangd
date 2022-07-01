@@ -3,19 +3,35 @@
 #   #Remove: -std=gnu11                     # strip all other warning-related flags
 #   Compiler: clang++               # Change argv[0] of compile flags to `clang++`
 
-
 CompileFlags:
   # Treat code as C++, use C++17 standard, enable more warnings.
   Add: [-xc++, -std=c++17, -Wall, -Wno-missing-prototypes]
   # Remove extra warnings specified in compile commands.
   # Single value is also acceptable, same as "Remove: [-mabi]"
-  Remove: -mabi
-  Compiler: clang++-15               # Change argv[0] of compile flags to `clang++`
+  Remove: -mabi -std=gnu++14 -std=gnu++17
+  # Compiler: clang++-15               # Change argv[0] of compile flags to `clang++`
 
+---
 Diagnostics:
   # Tweak Clang-Tidy checks.
   ClangTidy:
-    Add: [performance*, modernize*, readability*]
-    Remove: [modernize-use-trailing-return-type]
+    Add:
+      [
+        performance*,
+        modernize*,
+        readability*,
+        bugprone-*,
+        google-*,
+        readability-redundant-member-init,
+      ]
+    # Remove: [modernize-use-trailing-return-type]
     CheckOptions:
-      readability-identifier-naming.VariableCase: CamelCase
+      readability-identifier-naming.VariableCase: lower_case
+      bugprone-assert-side-effect.AssertMacros: assert,DCHECK
+      bugprone-dangling-handle.HandleClasses: ::std::basic_string_view;::std::span;::absl::string_view;::base::BasicStringPiece;::base::span
+      bugprone-string-constructor.StringNames: ::std::basic_string;::std::basic_string_view;::base::BasicStringPiece
+      modernize-use-default-member-init.UseAssignment: 1
+      # This relaxes modernize-use-emplace in some cases; we might want to make it
+      # more aggressive in the future. See discussion on
+      # https://groups.google.com/a/chromium.org/g/cxx/c/noMMTNYiM0w .
+      modernize-use-emplace.IgnoreImplicitConstructors: 1
