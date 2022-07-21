@@ -10,7 +10,8 @@ AlignConsecutiveAssignments: AcrossEmptyLines
 AlignConsecutiveBitFields: AcrossEmptyLines
 AlignConsecutiveDeclarations: AcrossEmptyLines
 AlignEscapedNewlines: Left
-AlignOperands:   Align
+AlignOperands:  AlignAfterOperator
+#AlignOperands:   Align
 AlignTrailingComments: true
 AllowAllArgumentsOnNextLine: false
 AllowAllParametersOfDeclarationOnNextLine: false

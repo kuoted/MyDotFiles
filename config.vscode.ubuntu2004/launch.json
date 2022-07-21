@@ -27,31 +27,12 @@
     },
     // Example gdb launch of a ros executable
     {
-      "name": "(gdb) Launch cupcake on Ubuntu locally",
+      //launch debug via SSH on remote virtualbox,
+      "name": "(gdb) Launch sunroof via ssh on Remote",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/04_GEEP50_0002_AppFw/install/cupcake/lib/cupcake/${input:program}",
-      "args": [],
       //  "preLaunchTask": "colcon: build(debug)",
-      "stopAtEntry": true,
-      "cwd": "${workspaceFolder}",
-      "externalConsole": false,
-      "MIMode": "gdb",
-      "setupCommands": [
-        {
-          "description": "Enable pretty-printing for gdb",
-          "text": "-enable-pretty-printing",
-          "ignoreFailures": true
-        }
-      ],
-      "envFile": "${workspaceFolder}/.vscode/env_launch_inDocker"
-    },
-    {
-      //launch debug via SSH on remote,
-      "name": "(gdb) Launch cupcake which located in Docker",
-      "type": "cppdbg",
-      "request": "launch",
-      "program": "${workspaceFolder}/04_GEEP50_0002_AppFw/install/cupcake/lib/cupcake/cupcake",
+      "program": "${workspaceFolder}/105_sunroof_workspace/install/ccu_bd_sunroof/lib/ccu_bd_sunroof/ccu_bd_sunroof",
       "args": [],
       "stopAtEntry": true,
       "cwd": "${workspaceFolder}",
@@ -64,7 +45,7 @@
           "ignoreFailures": true
         },
       ],
-      "envFile": "${workspaceFolder}/.vscode/env_launch_inDocker"
+      "envFile": "${workspaceFolder}/.vscode/env_launch_ros2.sunroof"
     },
     {
       //launch debug via SSH on remote virtualbox,
