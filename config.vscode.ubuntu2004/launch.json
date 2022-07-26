@@ -66,7 +66,28 @@
           "ignoreFailures": true
         },
       ],
-      "envFile": "${workspaceFolder}/.vscode/env_launch_ros2"
+      "envFile": "${workspaceFolder}/.vscode/env_launch_ros2.vehicle_lock"
+    },
+    {
+      //launch debug via SSH on remote virtualbox,
+      "name": "(gdb) Launch srv_common_container via ssh on Remote",
+      "type": "cppdbg",
+      "request": "launch",
+      //  "preLaunchTask": "colcon: build(debug)",
+      "program": "${workspaceFolder}/102_vehicle_lock_workspace/install/srv_common/lib/srv_common/srv_common_container",
+      "args": [],
+      "stopAtEntry": true,
+      "cwd": "${workspaceFolder}",
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        },
+      ],
+      "envFile": "${workspaceFolder}/.vscode/env_launch_ros2.vehicle_lock"
     },
     {
       //launch debug via SSH on remote virtualbox,

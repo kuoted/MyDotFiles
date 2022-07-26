@@ -76,7 +76,7 @@ ZSH_THEME_RANDOM_IGNORED=("emotty cloud,sammy,fletcherm, edvardm, humza, adben,b
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # plugins=(git autojump zsh-autosuggestions)
-plugins=(git z zsh-autosuggestions sudo)
+plugins=(git z sudo zsh-autosuggestions zsh-syntax-highlighting )
 
 
 # install autosuggestions
@@ -119,6 +119,8 @@ source $ZSH/oh-my-zsh.sh
  alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias cat=batcat
+alias ln='ln -i'
+alias cp='cp -i'
 
 export HIST_STAMPS="yyyy-mm-dd"
 

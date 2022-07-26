@@ -1,5 +1,5 @@
 # MyDotFiles
-
+share my dotfiles on differents work stations
 保存Linux，Macos下 dotfiles.
 
 #### 介绍
