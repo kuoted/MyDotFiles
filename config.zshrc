@@ -129,4 +129,7 @@ export HIST_STAMPS="yyyy-mm-dd"
 export RMW_IMPLEMENTATION=rmw_fastrtps_cpp
 export DEFAULT_RMW_IMPLEMENTATION=rmw_fastrtps_cpp
 export RCUTILS_CONSOLE_OUTPUT_FORMAT="[{severity} {time}] [{name}]: {message} ({function_name}() at {file_name}:{line_number})"
+export ROS_DISTRO=galactic
 #source /home/kuoted/01_work/23_ros2/galactic2/04_GEEP50_0002_AppFw/install/setup.zsh
+#export PATH=/home/kuoted/tools/depot_tools:/home/kuoted/.local/bin:/home/kuoted/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+

@@ -19,3 +19,14 @@ export CM_CONFIG_FILE_PATH=~/05_mdc/02_x86_emulator/PLATFORM_Sample/outputcfg/Md
 
 python3 -m pip  install -U -i https://pypi.tuna.tsinghua.edu.cn/simple/ cmake_format
 sudo apt install libtinyxml2-dev libasio-dev 
+
+
+#### How to build vsomeipv3
+git clone https://github.com/COVESA/vsomeip.git
+sudo apt install libboost-system-dev libboost-thread-dev libboost-log-dev 
+
+cmake .. -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -DDEFAULT_CONFIGURATION_FOLDER=/home/kuoted/01_work/103_galactic/300_depends/vsomeip/config -DENABLE_SIGNAL_HANDLING=1
+
+
+export PATH=/home/kuoted/tools/depot_tools:/home/kuoted/.local/bin:/home/kuoted/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+

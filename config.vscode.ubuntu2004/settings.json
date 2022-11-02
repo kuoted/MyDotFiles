@@ -472,6 +472,8 @@
   //"ros.isolateEnvironment": false,
   "editor.maxTokenizationLineLength": 200000,
   "ros.isolateEnvironment": false,
+  "git.ignoreLimitWarning": true,
+  "cmake.sourceDirectory": "${workspaceFolder}/02_ubuntu2004/04_autosar_ap/07_thirdparty/01_vsomeip_git/tools",
   // "clangd.arguments": [
   //   "--path-mappings=${workspaceFolder}/101_elec_side_step_workspace/=${workspaceFolder}/02_GEEP50_0001_DCFw_GIT/"
   // ],

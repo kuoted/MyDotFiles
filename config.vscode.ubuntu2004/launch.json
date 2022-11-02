@@ -28,11 +28,32 @@
     // Example gdb launch of a ros executable
     {
       //launch debug via SSH on remote virtualbox,
+      "name": "(gdb) Launch ota_demo via ssh on Remote",
+      "type": "cppdbg",
+      "request": "launch",
+      //  "preLaunchTask": "colcon: build(debug)",
+      "program": "${workspaceFolder}/400_sota_demo/101_vehicle_src/install/ccu_sota_cpp/lib/ccu_sota_cpp/ccu_sota_cpp",
+      "args": [],
+      "stopAtEntry": true,
+      "cwd": "${workspaceFolder}",
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        },
+      ],
+      "envFile": "${workspaceFolder}/.vscode/env_launch_ros2.ota_demo"
+    },
+    {
+      //launch debug via SSH on remote virtualbox,
       "name": "(gdb) Launch sunroof via ssh on Remote",
       "type": "cppdbg",
       "request": "launch",
       //  "preLaunchTask": "colcon: build(debug)",
-      "program": "${workspaceFolder}/105_sunroof_workspace/install/ccu_bd_sunroof/lib/ccu_bd_sunroof/ccu_bd_sunroof",
+      "program": "${workspaceFolder}/M002_sunroof_workspace/install/ccu_bd_sunroof/lib/ccu_bd_sunroof/ccu_bd_sunroof",
       "args": [],
       "stopAtEntry": true,
       "cwd": "${workspaceFolder}",
@@ -46,6 +67,27 @@
         },
       ],
       "envFile": "${workspaceFolder}/.vscode/env_launch_ros2.sunroof"
+    },
+    {
+      //launch debug via SSH on remote virtualbox,
+      "name": "(gdb) Launch exterior light via ssh on Remote",
+      "type": "cppdbg",
+      "request": "launch",
+      //  "preLaunchTask": "colcon: build(debug)",
+      "program": "${workspaceFolder}/M005_exterior_lights_workspace/install/exterior_lights/lib/exterior_lights/exterior_lights",
+      "args": [],
+      "stopAtEntry": true,
+      "cwd": "${workspaceFolder}",
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        },
+      ],
+      "envFile": "${workspaceFolder}/.vscode/env_launch_ros2.exterior_light"
     },
     {
       //launch debug via SSH on remote virtualbox,
@@ -95,7 +137,7 @@
       "type": "cppdbg",
       "request": "launch",
       //  "preLaunchTask": "colcon: build(debug)",
-      "program": "${workspaceFolder}/20220609_2_elec_side_step_workspace/install/bdc_package/lib/bdc_package/bdc",
+      "program": "${workspaceFolder}/101_elec_side_step_workspace/install/bdc_package/lib/bdc_package/bdc",
       "args": [],
       "stopAtEntry": true,
       "cwd": "${workspaceFolder}",
@@ -108,7 +150,28 @@
           "ignoreFailures": true
         },
       ],
-      "envFile": "${workspaceFolder}/.vscode/env_launch_ros2"
+      "envFile": "${workspaceFolder}/.vscode/env_launch_ros2.elec_side_step"
+    },
+    {
+      //launch debug via SSH on remote virtualbox,
+      "name": "(gdb) Launch rear_mirror_crash via ssh on Remote",
+      "type": "cppdbg",
+      "request": "launch",
+      //  "preLaunchTask": "colcon: build(debug)",
+      "program": "${workspaceFolder}/107_rearview_mirror_workspace_crash/install/rearview_mirror/lib/rearview_mirror/rearview_mirror",
+      "args": [],
+      "stopAtEntry": true,
+      "cwd": "${workspaceFolder}",
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        },
+      ],
+      "envFile": "${workspaceFolder}/.vscode/env_launch_ros2.rearview_mirror_crash"
     },
   ],
 }
