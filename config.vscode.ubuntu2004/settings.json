@@ -472,6 +472,7 @@
   //"ros.isolateEnvironment": false,
   "editor.maxTokenizationLineLength": 200000,
   "ros.isolateEnvironment": false,
+  "git.ignoreLimitWarning": true,
   // "clangd.arguments": [
   //   "--path-mappings=${workspaceFolder}/101_elec_side_step_workspace/=${workspaceFolder}/02_GEEP50_0001_DCFw_GIT/"
   // ],

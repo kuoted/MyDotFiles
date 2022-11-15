@@ -11,31 +11,37 @@ CompileFlags:
   Remove: -mabi -std=gnu++14 -std=gnu++17
   # Compiler: clang++-15               # Change argv[0] of compile flags to `clang++`
 
-# ---
-# Diagnostics:
-#   # Tweak Clang-Tidy checks.
-#   ClangTidy:
-#     Add:
-#       [
-#         performance*,
-#         modernize*,
-#         readability*,
-#         bugprone-*,
-#         google-*,
-#         readability-redundant-member-init,
-#       ]
-#     Remove: [modernize-use-trailing-return-type, modernize-avoid-c-arrays]
-#     CheckOptions:
-#       bugprone-assert-side-effect.AssertMacros: assert,DCHECK
-#       bugprone-dangling-handle.HandleClasses: ::std::basic_string_view;::std::span;::absl::string_view;::base::BasicStringPiece;::base::span
-#       bugprone-string-constructor.StringNames: ::std::basic_string;::std::basic_string_view;::base::BasicStringPiece
-#       modernize-use-default-member-init.UseAssignment: 1
-#       # This relaxes modernize-use-emplace in some cases; we might want to make it
-#       # more aggressive in the future. See discussion on
-#       # https://groups.google.com/a/chromium.org/g/cxx/c/noMMTNYiM0w .
-#       modernize-use-emplace.IgnoreImplicitConstructors: 1
-#       # modernize-use-override: 1
-#       readability-identifier-naming.ConstexprVariableCase: aNy_CasE
-#       readability-identifier-naming.GlobalConstantCase: aNy_CasE
-#       # readability-identifier-naming.VariableCase: lower_case
-#       # readability-identifier-naming.VariableCase: lower_case
+---
+Diagnostics:
+  # Tweak Clang-Tidy checks.
+  ClangTidy:
+    Add:
+      [
+        performance*,
+        modernize*,
+        readability*,
+        bugprone-*,
+        google-*,
+        readability-redundant-member-init,
+      ]
+    Remove:
+      [
+        modernize-use-trailing-return-type,
+        modernize-avoid-c-arrays,
+        modernize-use-using,
+      ]
+    CheckOptions:
+      bugprone-assert-side-effect.AssertMacros: assert,DCHECK
+      bugprone-dangling-handle.HandleClasses: ::std::basic_string_view;::std::span;::absl::string_view;::base::BasicStringPiece;::base::span
+      bugprone-string-constructor.StringNames: ::std::basic_string;::std::basic_string_view;::base::BasicStringPiece
+      modernize-use-default-member-init.UseAssignment: 1
+      # This relaxes modernize-use-emplace in some cases; we might want to make it
+      # more aggressive in the future. See discussion on
+      # https://groups.google.com/a/chromium.org/g/cxx/c/noMMTNYiM0w .
+      modernize-use-emplace.IgnoreImplicitConstructors: 1
+      # modernize-use-override: 1
+      readability-identifier-naming.ConstexprVariableCase: aNy_CasE
+      readability-identifier-naming.GlobalConstantCase: aNy_CasE
+      modernize-use-using.IgnoreMacros: true
+      # readability-identifier-naming.VariableCase: lower_case
+      # readability-identifier-naming.VariableCase: lower_case
