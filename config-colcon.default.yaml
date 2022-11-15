@@ -1,0 +1,25 @@
+build:
+  # only build the demo_nodes_cpp package, to save time building all of the demos
+  # packages-up-to: ["ccu_ota_cpp"]
+  # make a merged install space, which is easier to distribute
+  #merge-install: true
+  # add some output for readability
+  symlink-install: true
+  event-handlers:
+    - console_direct-
+    - console_cohesion-
+    - console_package_list+
+    - compile_commands+
+  #packages-ignore:
+  #  - rcl_logging_log4cxx
+  #  - rcl_logging_spdlog
+  cmake-args: [
+      "-DBUILD_TESTING=OFF",
+      "-DRCL_LOGGING_IMPLEMENTATION=rcl_logging_noop",
+      "-DBUILD_EXAMPLES=OFF",
+      "-DCMAKE_EXPORT_COMPILE_COMMANDS=1",
+      "-DCMAKE_BUILD_TYPE:STRING=Debug",
+      "-DBUILD_TESTING=OFF",
+      "-Wno-dev",
+      "--no-warn-unused-cli",
+    ]

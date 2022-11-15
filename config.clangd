@@ -43,7 +43,7 @@ Diagnostics:
       # modernize-use-override: 1
       readability-identifier-naming.ConstexprVariableCase: aNy_CasE
       readability-identifier-naming.GlobalConstantCase: aNy_CasE
-      readability-identifier-length: 1
+      readability-identifier-length.MinimumVariableNameLength: 2
       modernize-use-using.IgnoreMacros: true
       # readability-identifier-naming.VariableCase: lower_case
       # readability-identifier-naming.VariableCase: lower_case
