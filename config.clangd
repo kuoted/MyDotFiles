@@ -29,6 +29,7 @@ Diagnostics:
         modernize-use-trailing-return-type,
         modernize-avoid-c-arrays,
         modernize-use-using,
+        readability-convert-member-functions-to-static,
       ]
     CheckOptions:
       bugprone-assert-side-effect.AssertMacros: assert,DCHECK
@@ -42,6 +43,7 @@ Diagnostics:
       # modernize-use-override: 1
       readability-identifier-naming.ConstexprVariableCase: aNy_CasE
       readability-identifier-naming.GlobalConstantCase: aNy_CasE
+      readability-identifier-length: 1
       modernize-use-using.IgnoreMacros: true
       # readability-identifier-naming.VariableCase: lower_case
       # readability-identifier-naming.VariableCase: lower_case

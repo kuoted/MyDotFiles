@@ -28,6 +28,27 @@
     // Example gdb launch of a ros executable
     {
       //launch debug via SSH on remote virtualbox,
+      "name": "(gdb) Launch ota_demo via ssh on Remote",
+      "type": "cppdbg",
+      "request": "launch",
+      //  "preLaunchTask": "colcon: build(debug)",
+      "program": "${workspaceFolder}/M001_ota_modules/install/ccu_sota_cpp/lib/ccu_sota_cpp/ccu_sota_cpp",
+      "args": [],
+      "stopAtEntry": true,
+      "cwd": "${workspaceFolder}",
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        },
+      ],
+      "envFile": "${workspaceFolder}/.vscode/env_launch_ros2.ota_demo"
+    },
+    {
+      //launch debug via SSH on remote virtualbox,
       "name": "(gdb) Launch sunroof via ssh on Remote",
       "type": "cppdbg",
       "request": "launch",
@@ -131,7 +152,7 @@
       ],
       "envFile": "${workspaceFolder}/.vscode/env_launch_ros2.elec_side_step"
     },
-     {
+    {
       //launch debug via SSH on remote virtualbox,
       "name": "(gdb) Launch rear_mirror_crash via ssh on Remote",
       "type": "cppdbg",
