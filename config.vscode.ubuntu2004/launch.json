@@ -32,7 +32,7 @@
       "type": "cppdbg",
       "request": "launch",
       //  "preLaunchTask": "colcon: build(debug)",
-      "program": "${workspaceFolder}/M001_ota_modules/install/ccu_sota_cpp/lib/ccu_sota_cpp/ccu_sota_cpp",
+      "program": "${workspaceFolder}/M001_ota_modules/install/ccu_ota_cpp/lib/ccu_ota_cpp/ccu_ota_cpp",
       "args": [],
       "stopAtEntry": true,
       "cwd": "${workspaceFolder}",
