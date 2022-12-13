@@ -19,7 +19,7 @@ ZSH_THEME_RANDOM_IGNORED=("emotty cloud,sammy,fletcherm, edvardm, humza, adben,b
 # a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
- ZSH_THEME_RANDOM_CANDIDATES=( "jonathan" "agnoster" "fox" "crcandy")
+ZSH_THEME_RANDOM_CANDIDATES=( "jonathan" "agnoster" "fox" "crcandy")
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -124,12 +124,41 @@ alias cp='cp -i'
 
 export HIST_STAMPS="yyyy-mm-dd"
 
+### configuration for OS
+# 识别linux为ubantu还是redhat
+if [ -f /etc/os-release ]; then
+	source /etc/os-release
+fi
+
+
+if [ -f /etc/redhat-release ]; then
+#  echo "redhat_enable_cron"   kill_redhat_firewall
+elif [[ $ID =~ "Ubuntu" || $PRETTY_NAME =~ "Ubuntu" ]]; then
+  export RCUTILS_CONSOLE_OUTPUT_FORMAT="[{severity} {time}] [{name}]: {message} ({function_name}() at {file_name}:{line_number})"
+  if [ $VERSION_ID =~ "20.04" ]; then
+    export RMW_IMPLEMENTATION=rmw_fastrtps_cpp
+    export DEFAULT_RMW_IMPLEMENTATION=rmw_fastrtps_cpp
+    #export ROS_DISTRO=galactic
+  elif [ $VERSION_ID =~ "22.04" ]; then
+    export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+    #export ROS_DISTRO=humble
+  fi
+#  echo "ubuntu_enable_cron"   kill_ubuntu_firewall
+elif [[ $lsb =~ "Debian" || $PRETTY_NAME =~ "Debian" ]]; then
+  # echo "debian_enable_cron"   kill_unknown_firewall
+elif [[ $lsb =~ "SUSE" || $PRETTY_NAME =~ "SUSE" ]]; then
+  # echo "suse_enable_cron"     kill_unknown_firewall
+elif [[ $lsb =~ "NeoKylin" || $PRETTY_NAME =~ "NeoKylin" ]]; then
+  # echo "中标麒麟：redhat_enable_cron"   kill_redhat_firewall
+elif [[ $lsb =~ "Kylin" || $PRETTY_NAME =~ "Kylin" ]]; then
+  # echo "银河麒麟：ubuntu_enable_cron"   kill_ubuntu_firewall
+else
+  # echo "Warn: Bypass system check"
+fi
+
 
 ### debug for ROS2
-export RMW_IMPLEMENTATION=rmw_fastrtps_cpp
-export DEFAULT_RMW_IMPLEMENTATION=rmw_fastrtps_cpp
-export RCUTILS_CONSOLE_OUTPUT_FORMAT="[{severity} {time}] [{name}]: {message} ({function_name}() at {file_name}:{line_number})"
-export ROS_DISTRO=galactic
+
 #source /home/kuoted/01_work/23_ros2/galactic2/04_GEEP50_0002_AppFw/install/setup.zsh
 #export PATH=/home/kuoted/tools/depot_tools:/home/kuoted/.local/bin:/home/kuoted/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 
