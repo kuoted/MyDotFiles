@@ -1,0 +1,49 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "presentation": "group",
+  "configurations": [
+    {
+      "name": "ROS: Launch via ssh",
+      "type": "ros",
+      "request": "launch",
+      "target": "${workspaceFolder}/04_GEEP50_0002_AppFw/install/cupcake/lib/cupcake/cupcake",
+    },
+    {
+      // Example launch of a python file
+      "name": "Python: Current File (Integrated Terminal)",
+      "type": "python",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal",
+      "stopAtEntry": true,
+      "cwd": "${workspaceFolder}",
+      "autoReload": {
+        "enable": true
+      }
+    },
+    // Example gdb launch of a ros executable
+    {
+      "name": "(gdb) Launch state_management on Ubuntu locally",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/101_SM_EM/install/state_manager/lib/state_manager/state_manager",
+      "args": [],
+      //  "preLaunchTask": "colcon: build(debug)",
+      "stopAtEntry": true,
+      "cwd": "${workspaceFolder}",
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      "envFile": "${workspaceFolder}/.vscode/env_launch"
+    },
+  ],
+}
