@@ -30,3 +30,4 @@ cmake .. -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -DDEFAULT_CONFIGURATION_FOLDER=/home/
 
 export PATH=/home/kuoted/tools/depot_tools:/home/kuoted/.local/bin:/home/kuoted/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 
+ros2 pkg create execute_management_action --build-type ament_cmake --dependencies rclcpp em_sm_common ExecuteMangementAction
