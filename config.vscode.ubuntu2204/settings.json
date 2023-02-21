@@ -471,8 +471,8 @@
     "files.associations": {
         "thread": "cpp"
     },
-    "ros.distro": "galactic",
-    "ros.rosSetupScript": "/home/kuoted/01_work/23_ros2/galactic2/04_GEEP50_0002_AppFw/install/setup.bash",
+    "ros.distro": "humble",
+    "ros.rosSetupScript": "",
     //"ros.isolateEnvironment": false,
     "editor.maxTokenizationLineLength":200000,
 }

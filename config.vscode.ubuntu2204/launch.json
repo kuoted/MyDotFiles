@@ -26,10 +26,10 @@
     },
     // Example gdb launch of a ros executable
     {
-      "name": "(gdb) Launch state_management on Ubuntu locally",
+      "name": "(gdb) Launch execution_mgr_cpp on Ubuntu locally",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/101_SM_EM/install/state_manager/lib/state_manager/state_manager",
+      "program": "${workspaceFolder}/102_EM_SM_crayon-masp/install/execution_mgr_cpp/lib/execution_mgr_cpp/execution_mgr_cpp",
       "args": [],
       //  "preLaunchTask": "colcon: build(debug)",
       "stopAtEntry": true,
