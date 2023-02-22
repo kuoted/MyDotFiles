@@ -1,4 +1,4 @@
-git clone -b feature/humble_exec_action git@gitlab.ks.x:crayon-masp/crayon-masp.git 01_EM_action_crayon-masp
+git clone -b feature/em_sm_merge git@gitlab.ks.x:crayon-masp/crayon-masp.git 02_EM_SM_crayon-masp
 git clone -b master git@gitlab.ks.x:crayon-masp/crayon-masp.git 10_master_crayon-masp
 git clone -b feature/humble_exec git@gitlab.ks.x:crayon-masp/crayon-masp.git 11_EM_crayon-masp
 git clone -b bugfix/state_management git@gitlab.ks.x:crayon-masp/crayon-masp.git 12_SM_crayon-masp

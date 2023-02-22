@@ -1,6 +1,7 @@
 docker run -it --name ros2ubuntu -p 2222:22 -v /home/kuoted/02_ubuntu2004:/home/kuoted/02_ubuntu2004  ubuntu:20.04
 docker run -it --name autosarap -p 2223:22 -v /home/kuoted/03_ubuntu1604:/home/kuoted/03_ubuntu1604  ubuntu:16.04
 docker run -it --name autosarap -p 2223:22 -v /home/kuoted/03_ubuntu1604:/home/kuoted/03_ubuntu1604  ubuntu:16.04
+docker run -it --name humbleWithDebug -p 2223:22 -v /Users/kuoted/01_work/02_kernelsoft/1_framework:/home/kuoted/1_framework  ef3e17427ebc
 docker run -it --name 03_mdc_simulator -p 2225:22 -v /home/kuoted/04_ubuntu1804:/home/kuoted/04_ubuntu1804 -v /home/kuoted/00_shared_common:/home/kuoted/00_shared_common  ubuntu:18.04
 
 
@@ -18,6 +19,10 @@ export SOMEIP_CONFIG_FILE=~/05_mdc/02_x86_emulator/PLATFORM_Sample/outputcfg/Mdc
 export CM_CONFIG_FILE_PATH=~/05_mdc/02_x86_emulator/PLATFORM_Sample/outputcfg/MdcADpGeaMachine/someip_method_kpoll_server_sample/SomeipMethodKpollServerSampleProcess
 
 python3 -m pip  install -U -i https://pypi.tuna.tsinghua.edu.cn/simple/ cmake_format
+python3 -m pip  install -U -i https://pypi.tuna.tsinghua.edu.cn/simple/ setuptools==58.2.0
+#回退安装指令
+pip install setuptools==58.2.0
+
 sudo apt install libtinyxml2-dev libasio-dev 
 
 

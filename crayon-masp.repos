@@ -1,0 +1,27 @@
+repositories:
+  02_EM_SM_crayon-masp:
+    type: git
+    url: git@gitlab.ks.x:crayon-masp/crayon-masp.git
+    version: bugfix/em_sm_merge
+  22_EM_SM_submitToTest_crayon-masp:
+    type: git
+    url: git@gitlab.ks.x:crayon-masp/crayon-masp.git
+    version: feature/em_sm_merge
+  10_master_crayon-masp:
+    type: git
+    url: git@gitlab.ks.x:crayon-masp/crayon-masp.git
+    version: master
+  11_EM_crayon-masp:
+    type: git
+    url: git@gitlab.ks.x:crayon-masp/crayon-masp.git
+    version: feature/humble_exec
+  12_SM_crayon-masp:
+    type: git
+    url: git@gitlab.ks.x:crayon-masp/crayon-masp.git
+    version: bugfix/state_management
+
+
+ # core/autoware_msgs:
+ #   type: git
+ #   url: https://github.com/autowarefoundation/autoware_msgs.git
+ #   version: main
