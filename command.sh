@@ -20,6 +20,7 @@ export CM_CONFIG_FILE_PATH=~/05_mdc/02_x86_emulator/PLATFORM_Sample/outputcfg/Md
 
 python3 -m pip  install -U -i https://pypi.tuna.tsinghua.edu.cn/simple/ cmake_format
 python3 -m pip  install -U -i https://pypi.tuna.tsinghua.edu.cn/simple/ setuptools==58.2.0
+python3 -m pip  install -U -i https://pypi.tuna.tsinghua.edu.cn/simple/ 
 #回退安装指令
 pip install setuptools==58.2.0
 
@@ -36,3 +37,5 @@ cmake .. -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -DDEFAULT_CONFIGURATION_FOLDER=/home/
 export PATH=/home/kuoted/tools/depot_tools:/home/kuoted/.local/bin:/home/kuoted/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 
 ros2 pkg create execute_management_action --build-type ament_cmake --dependencies rclcpp em_sm_common ExecuteMangementAction
+colcon build --symlink-install --cmake-args -DCMAKE_CXX_FLAGS='-fprofile-arcs -ftest-coverage' -DCMAKE_C_FLAGS='-fprofile-arcs -ftest-coverage' --packages-up-to execution_mgr_cpp execution_mgr_py
+sudo apt purge liblttng-ctl0 liblttng-ust-ctl4 liblttng-ust-dev liblttng-ust-python-agent0 liblttng-ust0 lttng-modules-dkms lttng-tools python3-lttngust

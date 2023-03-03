@@ -5,56 +5,46 @@
   "tasks": [
     // Build tasks
     {
-      "type": "colcon",
-      "label": "colcon: build(debug)",
+      "type": "shell",
+      "label": "colcon build(debug)",
       "detail": "Build workspace (debug)",
-      "args": [
-        "build",
-      //  "--merge-install",
-        "--symlink-install",
-        "--event-handlers",
-        "console_cohesion+",
-        "--base-paths",
-        "/home/kuoted/01_work/23_ros2/galactic2/geep50",
-        "--cmake-args",
-        "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
-        "-DCMAKE_BUILD_TYPE=Debug",
-        "-Wall",
-        "-Wextra",
-        "-Wpedantic"
-      ],
+      "options": {
+        "cwd": "${workspaceFolder}/02_EM_SM_crayon-masp",
+      },
+      "command": "source ${workspaceFolder}/201_crayon-masp_src/ws/STANDARD/install/setup.zsh && colcon build --symlink-install --event-handlers compile_commands+ console_cohesion- --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -DTRACETOOLS_DISABLE=OFF   -DCMAKE_BUILD_TYPE:STRING=Debug -DBUILD_TESTING=OFF -Wno-dev --no-warn-unused-cli --cmake-force-configure --packages-up-to execution_mgr_cpp",
       "problemMatcher": [
-        "$catkin-gcc"
+        "$catkin-gcc",
+        "$gcc"
       ],
       "group": {
         "kind": "build",
         "isDefault": true
       },
     },
-    {
-      "type": "colcon",
-      "label": "colcon: build",
-      "detail": "Build workspace Release",
-      "args": [
-        "build",
-      //  "--merge-install",
-        "--symlink-install",
-        "--event-handlers",
-        "console_cohesion+",
-        "--base-paths",
-        "/home/kuoted/01_work/23_ros2/galactic2/geep50",
-        "--cmake-args",
-        "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
-        "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
-        "-Wall",
-        "-Wextra",
-        "-Wpedantic"
-      ],
-      "problemMatcher": [
-        "$catkin-gcc"
-      ],
-      "group": "build"
-    },
+    // {
+    //   "type": "colcon",
+    //   "label": "colcon: build",
+    //   "detail": "Build workspace Release",
+    //   "args": [
+    //     "build",
+    //     //  "--merge-install",
+    //     "--symlink-install",
+    //     "--event-handlers",
+    //     "console_cohesion+",
+    //     "--base-paths",
+    //     "/home/kuoted/01_work/23_ros2/galactic2/geep50",
+    //     "--cmake-args",
+    //     "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
+    //     "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+    //     "-Wall",
+    //     "-Wextra",
+    //     "-Wpedantic"
+    //   ],
+    //   "problemMatcher": [
+    //     "$catkin-gcc"
+    //   ],
+    //   "group": "build"
+    // },
     //(TODO(!!Ted) Not Tested Yet.
     // Test tasks
     {
