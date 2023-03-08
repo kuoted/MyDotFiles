@@ -11,7 +11,7 @@
       "options": {
         "cwd": "${workspaceFolder}/02_EM_SM_crayon-masp",
       },
-      "command": "source ${workspaceFolder}/201_crayon-masp_src/ws/STANDARD/install/setup.zsh && colcon build --symlink-install --event-handlers compile_commands+ console_cohesion- --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -DTRACETOOLS_DISABLE=OFF   -DCMAKE_BUILD_TYPE:STRING=Debug -DBUILD_TESTING=OFF -Wno-dev --no-warn-unused-cli --cmake-force-configure --packages-up-to execution_mgr_cpp",
+      "command": "source ${workspaceFolder}/201_master_crayon-masp/ws/STANDARD/install/setup.zsh && colcon build --symlink-install --event-handlers compile_commands+ console_cohesion- --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -DTRACETOOLS_DISABLE=OFF   -DCMAKE_BUILD_TYPE:STRING=Debug -DBUILD_TESTING=OFF -Wno-dev --no-warn-unused-cli --cmake-force-configure --packages-up-to execution_mgr_cpp",
       "problemMatcher": [
         "$catkin-gcc",
         "$gcc"
