@@ -1,12 +1,12 @@
 repositories:
+  001_master_crayon-masp:
+    type: git
+    url: git@gitlab.ks.x:crayon-masp/crayon-masp.git
+    version: master
   101_EM_SM_merge_crayon-masp:
     type: git
     url: git@gitlab.ks.x:crayon-masp/crayon-masp.git
     version: bugfix/em_sm_merge
-  201_master_crayon-masp:
-    type: git
-    url: git@gitlab.ks.x:crayon-masp/crayon-masp.git
-    version: master
   202_EM_crayon-masp:
     type: git
     url: git@gitlab.ks.x:crayon-masp/crayon-masp.git
@@ -22,8 +22,7 @@ repositories:
   301_EM_SM_submitToTest_crayon-masp:
     type: git
     url: git@gitlab.ks.x:crayon-masp/crayon-masp.git
-    version: feature/em_sm_merge
-
+    version: feature/humble_exec_action
 
  # core/autoware_msgs:
  #   type: git
