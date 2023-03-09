@@ -1,5 +1,5 @@
 repositories:
-  001_master_crayon-masp:
+  901_master_crayon-masp:
     type: git
     url: git@gitlab.ks.x:crayon-masp/crayon-masp.git
     version: master
@@ -7,6 +7,10 @@ repositories:
     type: git
     url: git@gitlab.ks.x:crayon-masp/crayon-masp.git
     version: bugfix/em_sm_merge
+  102_EM_SM_merge_crayon-masp:
+    type: git
+    url: git@gitlab.ks.x:crayon-masp/crayon-masp.git
+    version: feature/em_sm_merge
   202_EM_crayon-masp:
     type: git
     url: git@gitlab.ks.x:crayon-masp/crayon-masp.git
