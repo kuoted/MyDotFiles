@@ -24,8 +24,6 @@ python3 -m pip  install -U -i https://pypi.tuna.tsinghua.edu.cn/simple/
 #回退安装指令
 pip install setuptools==58.2.0
 
-sudo apt install libtinyxml2-dev libasio-dev 
-
 
 #### How to build vsomeipv3
 git clone https://github.com/COVESA/vsomeip.git
@@ -46,3 +44,5 @@ $ git config --add oh-my-zsh.hide-dirty 1
 $ git config --add oh-my-zsh.hide-status 1
 
 lttng create em_tracing --output=`pwd`/em_trace/`date +%Y%m%dT%H-%M-%S`
+find . -type f -size +200M
+find -name *.o | xargs truncate -s 0
