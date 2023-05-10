@@ -19,6 +19,10 @@ repositories:
     type: git
     url: git@gitlab.ks.x:crayon-masp/crayon-masp.git
     version: bugfix/state_management
+  13_scheduler_rt_crayon-masp:
+    type: git
+    url: git@gitlab.ks.x:crayon-masp/crayon-masp.git
+    version: feature/scheduler_rt
 
 
  # core/autoware_msgs:

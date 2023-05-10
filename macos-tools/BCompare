@@ -1,0 +1,4 @@
+#!/bin/bash
+rm '/Users/kuoted/Library/Application Support/Beyond Compare/registry.dat'
+
+#"`dirname "$0"`"/BCompare.real $@
