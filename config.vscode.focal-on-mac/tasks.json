@@ -9,9 +9,9 @@
       "label": "colcon build(debug)",
       "detail": "Build workspace (debug)",
       "options": {
-        "cwd": "${workspaceFolder}/02_EM_SM_crayon-masp",
+        "cwd": "${workspaceFolder}/04_crayon-masp/102_EM_SM_merge_crayon-masp/ws/framework",
       },
-      "command": "source ${workspaceFolder}/201_master_crayon-masp/ws/STANDARD/install/setup.zsh && colcon build --symlink-install --event-handlers compile_commands+ console_cohesion- --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -DTRACETOOLS_DISABLE=OFF   -DCMAKE_BUILD_TYPE:STRING=Debug -DBUILD_TESTING=OFF -Wno-dev --no-warn-unused-cli --cmake-force-configure --packages-up-to execution_mgr_cpp",
+      "command": "source ${workspaceFolder}/200_humble_src/install/setup.zsh && colcon build --merge-install --event-handlers compile_commands+ console_cohesion- --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -DTRACETOOLS_DISABLE=ON   -DCMAKE_BUILD_TYPE:STRING=Debug -DBUILD_TESTING=OFF -Wno-dev --no-warn-unused-cli --cmake-force-configure --base-paths ${workspaceFolder}/04_crayon-masp/102_EM_SM_merge_crayon-masp/src/framework --packages-up-to execution_mgr_cpp",
       "problemMatcher": [
         "$catkin-gcc",
         "$gcc"
@@ -21,31 +21,6 @@
         "isDefault": true
       },
     },
-    // {
-    //   "type": "colcon",
-    //   "label": "colcon: build",
-    //   "detail": "Build workspace Release",
-    //   "args": [
-    //     "build",
-    //     //  "--merge-install",
-    //     "--symlink-install",
-    //     "--event-handlers",
-    //     "console_cohesion+",
-    //     "--base-paths",
-    //     "/home/kuoted/01_work/23_ros2/galactic2/geep50",
-    //     "--cmake-args",
-    //     "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
-    //     "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
-    //     "-Wall",
-    //     "-Wextra",
-    //     "-Wpedantic"
-    //   ],
-    //   "problemMatcher": [
-    //     "$catkin-gcc"
-    //   ],
-    //   "group": "build"
-    // },
-    //(TODO(!!Ted) Not Tested Yet.
     // Test tasks
     {
       "label": "test",
