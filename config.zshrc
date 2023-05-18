@@ -143,6 +143,9 @@ elif [[ $ID =~ "Ubuntu" || $PRETTY_NAME =~ "Ubuntu" ]]; then
     #export ROS_DISTRO=galactic
   elif [ $VERSION_ID =~ "22.04" ]; then
     export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+    export PATH="/usr/local/cuda/bin:$PATH"
+    export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
+    xhost +
     #export ROS_DISTRO=humble
   fi
 #  echo "ubuntu_enable_cron"   kill_ubuntu_firewall
