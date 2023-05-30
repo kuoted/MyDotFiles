@@ -32,7 +32,7 @@
       "type": "cppdbg",
       "request": "launch",
       //  "preLaunchTask": "colcon: build(debug)",
-      "program": "${workspaceFolder}/04_crayon-masp/102_EM_SM_merge_crayon-masp/ws/framework/execution_mgr_cpp",
+      "program": "${workspaceFolder}/ws/install/lib/execution_mgr_cpp/execution_mgr_cpp",
       "args": [],
       "stopAtEntry": true,
       "cwd": "${workspaceFolder}",
@@ -49,7 +49,49 @@
     },
     {
       //launch debug via SSH on remote virtualbox,
-      "name": "(gdb) Launch lttng_test",
+      "name": "(gdb) Launch ks-executor interprocess test",
+      "type": "cppdbg",
+      "request": "launch",
+      //  "preLaunchTask": "colcon: build(debug)",
+      "program": "${workspaceFolder}/ws/install/ks_executor/lib/ks_executor/ks_sub_interprocess_test.elf",
+      "args": [],
+      "stopAtEntry": true,
+      "cwd": "${workspaceFolder}",
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        },
+      ],
+      "envFile": "${workspaceFolder}/.vscode/env_launch_ros2.ks_executor"
+    },
+    {
+      //launch debug via SSH on remote virtualbox,
+      "name": "(gdb) Launch ks-executor-intraprocess test",
+      "type": "cppdbg",
+      "request": "launch",
+      //  "preLaunchTask": "colcon: build(debug)",
+      "program": "${workspaceFolder}/ws/install/ks_executor/lib/ks_executor/ks_sub_intraprocess_test.elf",
+      "args": [],
+      "stopAtEntry": true,
+      "cwd": "${workspaceFolder}",
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        },
+      ],
+      "envFile": "${workspaceFolder}/.vscode/env_launch_ros2.ks_executor"
+    },
+    {
+      //launch debug via SSH on remote virtualbox,
+      "name": "(gdb) Launch event-executor",
       "type": "cppdbg",
       "request": "launch",
       //  "preLaunchTask": "colcon: build(debug)",

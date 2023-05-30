@@ -30,6 +30,8 @@ Diagnostics:
         modernize-avoid-c-arrays,
         modernize-use-using,
         readability-convert-member-functions-to-static,
+        readability-function-cognitive-complexity,
+        modernize-concat-nested-namespaces,
       ]
     CheckOptions:
       bugprone-assert-side-effect.AssertMacros: assert,DCHECK

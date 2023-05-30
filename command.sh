@@ -9,6 +9,8 @@ docker run -it --name 04_ccu_sim -p 2226:22 -v /home/kuoted/04_ccu:/home/kuoted/
 docker run -it --name 05_mdc_sim -p 2227:22 -v /home/kuoted/05_mdc:/home/kuoted/05_mdc -v /home/kuoted/00_shared_common:/home/kuoted/00_shared_common  cvsuser/ubuntu1804:mdc610_x86_simulator
 docker run -it --name 05_mdc_sim -p 2228:22 -v  /home/kuoted/04_ubuntu1804:/home/kuoted/04_ubuntu1804 -v /home/kuoted/00_shared_common:/home/kuoted/00_shared_common cvsuser/mdc610_x86_simulator
 
+
+export MAKEFLAGS="-j 1"
 colcon build --symlink-install --event-handlers compile_commands+ console_cohesion- --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=1 --cmake-force-configure
 colcon build --symlink-install --event-handlers compile_commands+ console_cohesion- --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -DBUILD_TESTING=OFF -Wno-dev --no-warn-unused-cli --cmake-force-configure --packages-up-to ros_core 
 colcon build --symlink-install --event-handlers compile_commands+ console_cohesion- --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -DCMAKE_BUILD_TYPE:STRING=Debug -DBUILD_TESTING=OFF -Wno-dev --no-warn-unused-cli --cmake-force-configure
@@ -46,3 +48,6 @@ $ git config --add oh-my-zsh.hide-status 1
 lttng create em_tracing --output=`pwd`/em_trace/`date +%Y%m%dT%H-%M-%S`
 find . -type f -size +200M
 find -name *.o | xargs truncate -s 0
+colcon build --merge-install --symlink-install --event-handlers compile_commands+ console_direct+ console_cohesion+ --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -DTRACETOOLS_DISABLE=ON   -DCMAKE_BUILD_TYPE:STRING=Debug -DBUILD_TESTING=OFF -DCMAKE_VERBOSE_MAKEFILE=ON  -Wno-dev --no-warn-unused-cli --cmake-force-configure --base-paths /home/kuoted/01_work/04_crayon-masp/102_EM_SM_merge_crayon-masp/src/framework --packages-up-to 
+colcon build --symlink-install --cmake-args -DTRACETOOLS_DISABLE=ON -DCMAKE_BUILD_TYPE:STRING=Debug -DBUILD_TESTING=OFF -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -DCMAKE_VERBOSE_MAKEFILE=ON  --no-warn-unused-cli --cmake-force-configure  --base-paths ../src ../src/stdROS/ks_executor/tools --packages-up-to ros2cli_build_stub irobot_events_executor
+colcon build --symlink-install --event-handlers  console_direct+ --cmake-args -DTRACETOOLS_DISABLE=ON -DCMAKE_BUILD_TYPE:STRING=Debug -DBUILD_TESTING=OFF -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -DCMAKE_VERBOSE_MAKEFILE=ON  --no-warn-unused-cli --cmake-force-configure
