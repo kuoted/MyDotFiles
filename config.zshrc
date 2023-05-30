@@ -147,6 +147,9 @@ elif [[ $ID =~ "Ubuntu" || $PRETTY_NAME =~ "Ubuntu" ]]; then
     export KS_EXECUTOR_CONF_PATH='/home/kuoted/01_work/04_crayon-masp/bugfix/src/stdROS/ks_executor'
   elif [ $VERSION_ID =~ "22.04" ]; then
     export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+    export PATH="/usr/local/cuda/bin:$PATH"
+    export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
+    xhost +
     #export ROS_DISTRO=humble
   fi
   export SCHEDULER_RT_PATH=$HOME/01_work/04_crayon-masp/bugfix/src/ros2/scheduler_rt

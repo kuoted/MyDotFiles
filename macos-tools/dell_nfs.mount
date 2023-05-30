@@ -1,0 +1,3 @@
+#sudo mount -o nolock,hard,intr,tcp,nfsvers=3 10.10.12.101:/home/kuoted ~/01_work/vm_shares/kuoted-OptiPlex-7090 
+#sudo mount -t nfs -o nolock,hard,intr,tcp,nfsvers=3 10.10.12.101:/home/kuoted/nfsroot ~/01_work/vm_shares
+sudo mount -t nfs -o nolock,hard,intr,nfsvers=3 10.10.12.101:/home/kuoted/nfsroot ~/01_work/vm_shares/kuoted-OptiPlex-7090
