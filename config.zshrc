@@ -138,13 +138,21 @@ if [ -f /etc/redhat-release ]; then
 elif [[ $ID =~ "Ubuntu" || $PRETTY_NAME =~ "Ubuntu" ]]; then
   export RCUTILS_CONSOLE_OUTPUT_FORMAT="[{severity} {time}] [{name}]: {message} ({function_name}() at {file_name}:{line_number})"
   if [ $VERSION_ID =~ "20.04" ]; then
-    export RMW_IMPLEMENTATION=rmw_fastrtps_cpp
-    export DEFAULT_RMW_IMPLEMENTATION=rmw_fastrtps_cpp
-    #export ROS_DISTRO=galactic
+    # export ROS_DISTRO=galactic
+    # export RMW_IMPLEMENTATION=rmw_fastrtps_cpp
+    # export DEFAULT_RMW_IMPLEMENTATION=rmw_fastrtps_cpp
+
+    export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+    export DEFAULT_RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+    export KS_EXECUTOR_CONF_PATH='/home/kuoted/01_work/04_crayon-masp/bugfix/src/stdROS/ks_executor'
   elif [ $VERSION_ID =~ "22.04" ]; then
     export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+    export PATH="/usr/local/cuda/bin:$PATH"
+    export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
+    xhost +
     #export ROS_DISTRO=humble
   fi
+  export SCHEDULER_RT_PATH=$HOME/01_work/04_crayon-masp/bugfix/src/ros2/scheduler_rt
 #  echo "ubuntu_enable_cron"   kill_ubuntu_firewall
 elif [[ $lsb =~ "Debian" || $PRETTY_NAME =~ "Debian" ]]; then
   # echo "debian_enable_cron"   kill_unknown_firewall
@@ -161,6 +169,13 @@ if [ -d /Users/kuoted/Library/Python/3.9/bin/ ]; then
   export PATH=/Users/kuoted/Library/Python/3.9/bin:$PATH
 fi
 
+
+# environment for autoware
+# Created by `pipx` on 2023-05-04 06:37:24
+#source /opt/ros/humble/setup.zsh
+#export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+export PATH="/usr/local/cuda/bin:$PATH"
+export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
 
 ### debug for ROS2
 

@@ -9,9 +9,9 @@
       "label": "colcon build(debug)",
       "detail": "Build workspace (debug)",
       "options": {
-        "cwd": "${workspaceFolder}/04_crayon-masp/102_EM_SM_merge_crayon-masp/ws/framework",
+        "cwd": "${workspaceFolder}/ws",
       },
-      "command": "source ${workspaceFolder}/200_humble_src/install/setup.zsh && colcon build --merge-install --event-handlers compile_commands+ console_cohesion- --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -DTRACETOOLS_DISABLE=ON   -DCMAKE_BUILD_TYPE:STRING=Debug -DBUILD_TESTING=OFF -Wno-dev --no-warn-unused-cli --cmake-force-configure --base-paths ${workspaceFolder}/04_crayon-masp/102_EM_SM_merge_crayon-masp/src/framework --packages-up-to execution_mgr_cpp",
+      "command": "colcon build  --symlink-install --cmake-args -DTRACETOOLS_DISABLE=ON -DCMAKE_BUILD_TYPE:STRING=Debug -DBUILD_TESTING=OFF -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -DCMAKE_VERBOSE_MAKEFILE=OFF --no-warn-unused-cli  --base-paths ${workspaceFolder}/src --packages-select ks_executor",
       "problemMatcher": [
         "$catkin-gcc",
         "$gcc"

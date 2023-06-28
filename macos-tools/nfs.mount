@@ -1,0 +1,1 @@
+sudo mount -o nolock,hard,intr,tcp,nfsvers=3 172.16.117.137:/home/kuoted/01_work ~/01_work/vm_shares
