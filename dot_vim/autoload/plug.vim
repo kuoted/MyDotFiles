@@ -92,7 +92,7 @@ let g:loaded_plug = 1
 let s:cpo_save = &cpo
 set cpo&vim
 
-let s:plug_src = 'https://github.com/junegunn/vim-plug.git'
+let s:plug_src = 'https://ghproxy.com/https://github.com/junegunn/vim-plug.git'
 let s:plug_tab = get(s:, 'plug_tab', -1)
 let s:plug_buf = get(s:, 'plug_buf', -1)
 let s:mac_gui = has('gui_macvim') && has('gui_running')
@@ -1169,7 +1169,7 @@ function! s:update_impl(pull, force, args) abort
     let $GIT_TERMINAL_PROMPT = 0
     for plug in values(todo)
       let plug.uri = substitute(plug.uri,
-            \ '^https://git::@github\.com', 'https://github.com', '')
+            \ '^https://git::@github\.com', 'https://ghproxy.com/https://github.com', '')
     endfor
   endif
 

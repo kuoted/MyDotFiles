@@ -46,3 +46,8 @@ $ git config --add oh-my-zsh.hide-status 1
 lttng create em_tracing --output=`pwd`/em_trace/`date +%Y%m%dT%H-%M-%S`
 find . -type f -size +200M
 find -name *.o | xargs truncate -s 0
+export RCUTILS_COLORIZED_OUTPUT=1
+export RCUTILS_CONSOLE_OUTPUT_FORMAT="[{severity} {time}] [{name}]: {message} ({function_name}() at {file_name}:{line_number})"
+
+
+export https_proxy=http://172.26.192.7:7890 http_proxy=http://172.26.192.7:7890
