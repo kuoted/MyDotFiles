@@ -172,6 +172,13 @@ if [ -d /Users/kuoted/Library/Python/3.9/bin/ ]; then
 fi
 
 
+# environment for autoware
+# Created by `pipx` on 2023-05-04 06:37:24
+#source /opt/ros/humble/setup.zsh
+#export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+export PATH="/usr/local/cuda/bin:$PATH"
+export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
+
 ### debug for ROS2
 
 #source /home/kuoted/01_work/23_ros2/galactic2/04_GEEP50_0002_AppFw/install/setup.zsh
