@@ -51,3 +51,7 @@ find -name *.o | xargs truncate -s 0
 colcon build --merge-install --symlink-install --event-handlers compile_commands+ console_direct+ console_cohesion+ --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -DTRACETOOLS_DISABLE=ON   -DCMAKE_BUILD_TYPE:STRING=Debug -DBUILD_TESTING=OFF -DCMAKE_VERBOSE_MAKEFILE=ON  -Wno-dev --no-warn-unused-cli --cmake-force-configure --base-paths /home/kuoted/01_work/04_crayon-masp/102_EM_SM_merge_crayon-masp/src/framework --packages-up-to 
 colcon build --symlink-install --cmake-args -DTRACETOOLS_DISABLE=ON -DCMAKE_BUILD_TYPE:STRING=Debug -DBUILD_TESTING=OFF -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -DCMAKE_VERBOSE_MAKEFILE=ON  --no-warn-unused-cli --cmake-force-configure  --base-paths ../src ../src/stdROS/ks_executor/tools --packages-up-to ros2cli_build_stub irobot_events_executor
 colcon build --symlink-install --event-handlers  console_direct+ --cmake-args -DTRACETOOLS_DISABLE=ON -DCMAKE_BUILD_TYPE:STRING=Debug -DBUILD_TESTING=OFF -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -DCMAKE_VERBOSE_MAKEFILE=ON  --no-warn-unused-cli --cmake-force-configure
+
+
+export RCUTILS_COLORIZED_OUTPUT=1
+export RCUTILS_CONSOLE_OUTPUT_FORMAT="[{severity} {time}] [{name}]: {message} ({function_name}() at {file_name}:{line_number})"

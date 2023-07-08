@@ -142,9 +142,11 @@ elif [[ $ID =~ "Ubuntu" || $PRETTY_NAME =~ "Ubuntu" ]]; then
     # export RMW_IMPLEMENTATION=rmw_fastrtps_cpp
     # export DEFAULT_RMW_IMPLEMENTATION=rmw_fastrtps_cpp
 
+    export ROS_DISTRO=humble
     export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
     export DEFAULT_RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
-    export KS_EXECUTOR_CONF_PATH='/home/kuoted/01_work/04_crayon-masp/bugfix/src/stdROS/ks_executor'
+    export KS_EXECUTOR_CONF_PATH='/home/kuoted/01_work/04_crayon-masp/dev/src/stdROS/ks_executor'
+    export KS_EXECUTOR_CONF_PATH='/home/kuoted/01_work/04_crayon-masp/dev/src/stdROS/ks_extention/ks-reference-system/'
   elif [ $VERSION_ID =~ "22.04" ]; then
     export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
     export PATH="/usr/local/cuda/bin:$PATH"
