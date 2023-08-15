@@ -83,7 +83,7 @@
           "ignoreFailures": true
         },
       ],
-      "envFile": "${workspaceFolder}/.vscode/env_launch_ros2.ks_executor"
+      "envFile": "${workspaceFolder}/.vscode/env_launch_ros2.ks_app_20.elf"
     },
     {
       //launch debug via SSH on remote virtualbox,
