@@ -25,31 +25,9 @@
       },
       "envFile": "${workspaceFolder}/.vscode/env_launch_ros2"
     },
-    // Example gdb launch of a ros executable
     {
       //launch debug via SSH on remote virtualbox,
-      "name": "(gdb) Launch execution_mgr_cpp",
-      "type": "cppdbg",
-      "request": "launch",
-      //  "preLaunchTask": "colcon: build(debug)",
-      "program": "${workspaceFolder}/ws/install/lib/execution_mgr_cpp/execution_mgr_cpp",
-      "args": [],
-      "stopAtEntry": true,
-      "cwd": "${workspaceFolder}",
-      "externalConsole": false,
-      "MIMode": "gdb",
-      "setupCommands": [
-        {
-          "description": "Enable pretty-printing for gdb",
-          "text": "-enable-pretty-printing",
-          "ignoreFailures": true
-        },
-      ],
-      "envFile": "${workspaceFolder}/.vscode/env_launch_ros2.em"
-    },
-    {
-      //launch debug via SSH on remote virtualbox,
-      "name": "(gdb) Launch ks-executor 630demo",
+      "name": "(gdb) Launch ks-executor 630demo kernelsoftdds",
       "type": "cppdbg",
       "request": "launch",
       //  "preLaunchTask": "colcon: build(debug)",
@@ -83,7 +61,121 @@
           "ignoreFailures": true
         },
       ],
-      "envFile": "${workspaceFolder}/.vscode/env_launch_ros2.ks_app_20.elf"
+      "envFile": "${workspaceFolder}/.vscode/env_launch_ros2.ks_app_20.elf_kernelsoftdds"
+    },
+    {
+      //launch debug via SSH on remote virtualbox,
+      "name": "(gdb) Launch ks-executor 630demo-rti",
+      "type": "cppdbg",
+      "request": "launch",
+      //  "preLaunchTask": "colcon: build(debug)",
+      "program": "${workspaceFolder}/ws/install/ks_app_20/lib/ks_app_20/ks_app_20.elf",
+      "args": [
+        "-p",
+        "630demo",
+        "-d",
+        "dag/sensor-Lanelet2Map.dag",
+        "-d",
+        "dag/fusion-Lanelet2MapLoader.dag",
+        "-d",
+        "dag/transform-LanePlanner.dag",
+        "-d",
+        "dag/transform-ParkingPlanner.dag",
+        "-d",
+        "dag/cyclic-BehaviorPlanner.dag",
+        "-d",
+        "dag/transform-MPCController.dag",
+        "-d",
+        "dag/fusion-VehicleInterface.dag"
+      ],
+      "stopAtEntry": true,
+      "cwd": "${workspaceFolder}",
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        },
+      ],
+      "envFile": "${workspaceFolder}/.vscode/env_launch_ros2.ks_app_20.elf_rti_dds"
+    },
+    {
+      //launch debug via SSH on remote virtualbox,
+      "name": "(gdb) Launch ks-executor 630demo fastdds",
+      "type": "cppdbg",
+      "request": "launch",
+      //  "preLaunchTask": "colcon: build(debug)",
+      "program": "${workspaceFolder}/ws/install/ks_app_20/lib/ks_app_20/ks_app_20.elf",
+      "args": [
+        "-p",
+        "630demo",
+        "-d",
+        "dag/sensor-Lanelet2Map.dag",
+        "-d",
+        "dag/fusion-Lanelet2MapLoader.dag",
+        "-d",
+        "dag/transform-LanePlanner.dag",
+        "-d",
+        "dag/transform-ParkingPlanner.dag",
+        "-d",
+        "dag/cyclic-BehaviorPlanner.dag",
+        "-d",
+        "dag/transform-MPCController.dag",
+        "-d",
+        "dag/fusion-VehicleInterface.dag"
+      ],
+      "stopAtEntry": true,
+      "cwd": "${workspaceFolder}",
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        },
+      ],
+      "envFile": "${workspaceFolder}/.vscode/env_launch_ros2.ks_app_20.elf_fastdds"
+    },
+    {
+      //launch debug via SSH on remote virtualbox,
+      "name": "(gdb) Launch ks-executor 630demo cyclonedds",
+      "type": "cppdbg",
+      "request": "launch",
+      //  "preLaunchTask": "colcon: build(debug)",
+      "program": "${workspaceFolder}/ws/install/ks_app_20/lib/ks_app_20/ks_app_20.elf",
+      "args": [
+        "-p",
+        "630demo",
+        "-d",
+        "dag/sensor-Lanelet2Map.dag",
+        "-d",
+        "dag/fusion-Lanelet2MapLoader.dag",
+        "-d",
+        "dag/transform-LanePlanner.dag",
+        "-d",
+        "dag/transform-ParkingPlanner.dag",
+        "-d",
+        "dag/cyclic-BehaviorPlanner.dag",
+        "-d",
+        "dag/transform-MPCController.dag",
+        "-d",
+        "dag/fusion-VehicleInterface.dag"
+      ],
+      "stopAtEntry": true,
+      "cwd": "${workspaceFolder}",
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        },
+      ],
+      "envFile": "${workspaceFolder}/.vscode/env_launch_ros2.ks_app_20.elf_cyclonedds"
     },
     {
       //launch debug via SSH on remote virtualbox,
@@ -129,3 +221,4 @@
     },
   ],
 }
+
