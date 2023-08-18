@@ -200,11 +200,11 @@
     },
     {
       //launch debug via SSH on remote virtualbox,
-      "name": "(gdb) Launch event-executor",
+      "name": "(gdb) Launch autoware_default_ks_executor",
       "type": "cppdbg",
       "request": "launch",
       //  "preLaunchTask": "colcon: build(debug)",
-      "program": "${workspaceFolder}/02_EM_SM_crayon-masp/install/execution_mgr_cpp/lib/execution_mgr_cpp/lttng_test.elf",
+      "program": "${workspaceFolder}/ws/install/autoware_reference_system/lib/autoware_reference_system/autoware_default_ks_executor",
       "args": [],
       "stopAtEntry": true,
       "cwd": "${workspaceFolder}",
@@ -217,8 +217,7 @@
           "ignoreFailures": true
         },
       ],
-      "envFile": "${workspaceFolder}/.vscode/env_launch_ros2.em"
+      "envFile": "${workspaceFolder}/.vscode/env_launch_ros2.ks_app_20.elf_kernelsoftdds"
     },
   ],
 }
-
