@@ -19,18 +19,26 @@ Diagnostics:
   ClangTidy:
     Add:
       [
-        performance*,
-        modernize*,
-        readability*,
+        modernize-*,
+        readability-*,
         bugprone-*,
-        google-*,
-        readability-redundant-member-init,
+        performance-*,
+        cppcoreguidelines-*,
+
+        ## added at 2023-09-08 16:53:30 detect try catch.
+        misc-throw-by-value-catch-by-reference,
+        misc-non-copyable-objects,
+        cert-flp30-c,
+        # google-*,
+
+        # modernize-use-nullptr
+        # readability-redundant-member-init,
       ]
     Remove:
       [
         modernize-use-trailing-return-type,
         modernize-avoid-c-arrays,
-        modernize-use-using,
+        # modernize-use-using,
         readability-convert-member-functions-to-static,
         readability-function-cognitive-complexity,
         modernize-concat-nested-namespaces,
