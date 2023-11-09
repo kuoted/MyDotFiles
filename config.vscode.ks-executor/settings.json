@@ -3,5 +3,9 @@
   "python.analysis.extraPaths": [
     "./ws/build/ament_index_python",
     "./ws/build/tracetools_trace"
-  ]
+  ],
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.autopep8"
+  },
+  "python.formatting.provider": "none"
 }
