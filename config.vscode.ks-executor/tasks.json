@@ -4,7 +4,7 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "colcon cmake rclcpp",
+      "label": "colcon build rclcpp",
       "type": "shell",
       "command": "zsh",
       "args": [
@@ -29,7 +29,22 @@
         "$catkin-gcc"
       ],
       "detail": "colcon test"
-    }
+    },
+    {
+      "label": "uncrustify current file",
+      "type": "shell",
+      "command": "python3",
+      "args": [
+        "${workspaceFolder}/src/otrs/ament/ament_lint/ament_uncrustify/ament_uncrustify/main.py",
+        "--reformat",
+        "${file}"
+      ],
+      "group": "test",
+      "problemMatcher": [
+        "$catkin-gcc"
+      ],
+      "detail": "colcon test"
+    },
     // Build tasks
     {
       "type": "shell",
