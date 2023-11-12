@@ -7,7 +7,7 @@
   },
   "tasks": [
     {
-      "label": "colcon cmake rclcpp",
+      "label": "colcon build rclcpp",
       "type": "shell",
       "command": "zsh",
       "args": [
@@ -26,6 +26,21 @@
       "args": [
         "${workspaceFolder}/scripts/61_run_ks_reference_system.sh",
         "4"
+      ],
+      "group": "test",
+      "problemMatcher": [
+        "$catkin-gcc"
+      ],
+      "detail": "colcon test"
+    },
+    {
+      "label": "uncrustify current file",
+      "type": "shell",
+      "command": "python3",
+      "args": [
+        "${workspaceFolder}/src/otrs/ament/ament_lint/ament_uncrustify/ament_uncrustify/main.py",
+        "--reformat",
+        "${file}"
       ],
       "group": "test",
       "problemMatcher": [
