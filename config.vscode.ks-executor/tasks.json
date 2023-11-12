@@ -2,6 +2,9 @@
   // See https://go.microsoft.com/fwlink/?LinkId=733558
   // for the documentation about the tasks.json format
   "version": "2.0.0",
+  "options": {
+    "cwd": "${workspaceFolder}/ws",
+  },
   "tasks": [
     {
       "label": "colcon cmake rclcpp",
@@ -17,7 +20,7 @@
       "detail": "colcon build"
     },
     {
-      "label": "colcon test",
+      "label": "colcon test rclcpp",
       "type": "shell",
       "command": "zsh",
       "args": [
@@ -29,7 +32,7 @@
         "$catkin-gcc"
       ],
       "detail": "colcon test"
-    }
+    },
     // Build tasks
     {
       "type": "shell",
@@ -57,6 +60,9 @@
       "group": {
         "kind": "test",
         "isDefault": true
+      },
+      "options": {
+        "cwd": "${workspaceFolder}/ws",
       }
     },
     // Clean
