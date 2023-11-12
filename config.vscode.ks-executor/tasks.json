@@ -15,7 +15,8 @@
       ],
       "group": "build",
       "problemMatcher": [
-        "$catkin-gcc"
+        // "$catkin-gcc"
+        "$gcc"
       ],
       "detail": "colcon build"
     },
@@ -58,7 +59,7 @@
       },
       "command": "colcon build  --symlink-install --cmake-args -DTRACETOOLS_DISABLE=ON -DCMAKE_BUILD_TYPE:STRING=Debug -DBUILD_TESTING=OFF -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -DCMAKE_VERBOSE_MAKEFILE=OFF --no-warn-unused-cli  --base-paths ${workspaceFolder}/src --packages-select ks_executor",
       "problemMatcher": [
-        "$catkin-gcc",
+        // "$catkin-gcc",
         "$gcc"
       ],
       "group": {
