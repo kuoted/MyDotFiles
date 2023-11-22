@@ -30,31 +30,73 @@ if [ ! -d "$WORK_DIR" ]; then
   echo "search src failed."
   exit -1
 fi
-mkdir -p $WORK_DIR/ws
+mkdir -p $WORK_DIR/unit_test_ws
 
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH
 
-if [ -d $WORK_DIR/ws ] && [ -d $WORK_DIR/ws ]; then
-  cd $WORK_DIR/ws && colcon build --symlink-install \
+export MAKEFLAGS='VERBOSE=1'
+
+if [ -d $WORK_DIR/unit_test_ws ]; then
+  cd $WORK_DIR/unit_test_ws && colcon build --symlink-install \
     --event-handlers compile_commands+ console_direct- console_cohesion- \
     --cmake-args -DTRACETOOLS_DISABLE=OFF \
     -DCMAKE_BUILD_TYPE:STRING=Debug \
     -DBUILD_TESTING=ON \
     -DCMAKE_EXPORT_COMPILE_COMMANDS=1 \
     -DCMAKE_VERBOSE_MAKEFILE=OFF \
+    -DCMAKE_CXX_FLAGS='-fprofile-arcs -ftest-coverage -O1' \
+    -DCMAKE_C_FLAGS='-fprofile-arcs -ftest-coverage -O1' \
     --no-warn-unused-cli \
-    --base-paths $WORK_DIR/src \
-    --packages-up-to  \
-    ros2cli_build_stub \
+    --base-paths \
+    $WORK_DIR/src/stdROS \
+    $WORK_DIR/src/otrs \
+    --packages-up-to \
     rclcpp
-    
+  echo "${LINENO} last commond result=$?"
+
+  if [ $? -eq 0 ]; then
+    colcon lcov-result \
+      --initial \
+      --base-paths \
+      $WORK_DIR/src/stdROS \
+      $WORK_DIR/src/otrs \
+      --packages-select \
+      rclcpp
+    echo "${LINENO} last commond result=$?"
+  else
+  fi
+
+  if [ $? -eq 0 ]; then
+    colcon test \
+      --base-paths \
+      $WORK_DIR/src/stdROS \
+      $WORK_DIR/src/otrs \
+      --packages-select \
+      rclcpp
+    echo "${LINENO} last commond result=$?"
+  else
+  fi
+
+  if [ $? -eq 0 ]; then
+    colcon lcov-result \
+      --base-paths \
+      $WORK_DIR/src/stdROS \
+      $WORK_DIR/src/otrs \
+      --filter \
+      "*/test/*" \
+      --packages-select \
+      rclcpp
+    echo "${LINENO} last commond result=$?"
+  else
+  fi
+
   cd -
 else
   echo "error occured."
 fi
 
-# ks_executor2 \
-    # rmw_connextdds \
-# ks_app_20 \
+# rclcpp_action \
+# --packages-skip-build-finished \
+#  --packages-up-to \
 #--packages-skip-build-finished \
 #colcon build  --symlink-install --event-handlers compile_commands+ console_direct+ console_cohesion+    --cmake-args -DTRACETOOLS_DISABLE=ON -DCMAKE_BUILD_TYPE:STRING=Debug -DBUILD_TESTING=OFF -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -DCMAKE_VERBOSE_MAKEFILE=OFF --no-warn-unused-cli  --base-paths /home/kuoted/01_work/04_crayon-masp/dev/src/* --packages-up-to ks_executor ros2cli_build_stub irobot_events_executor

@@ -26,6 +26,56 @@
       "envFile": "${workspaceFolder}/.vscode/env_launch_ros2"
     },
     {
+      "name": "ros2 test debug",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/ws/build/rclcpp/test/rclcpp/${input:package_executable}",
+      "args": [],
+      "stopAtEntry": true,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "preLaunchTask": "",
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        },
+        {
+          "description": "Set Disassembly Flavor to Intel",
+          "text": "-gdb-set disassembly-flavor intel",
+          "ignoreFailures": true
+        }
+      ],
+      "envFile": "${workspaceFolder}/.vscode/env_launch_ros2.ks_app_20.elf_cyclonedds"
+    },
+    {
+      "name": "ros2 debug",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/ws/install/${input:package_name}/lib/${input:package_name}/${input:package_executable}",
+      "args": [],
+      "stopAtEntry": true,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        },
+        {
+          "description": "Set Disassembly Flavor to Intel",
+          "text": "-gdb-set disassembly-flavor intel",
+          "ignoreFailures": true
+        }
+      ]
+    },
+    {
       //launch debug via SSH on remote virtualbox,
       "name": "(gdb) Launch ks-executor 630demo kernelsoftdds",
       "type": "cppdbg",
@@ -221,4 +271,18 @@
       "envFile": "${workspaceFolder}/.vscode/env_launch_ros2.ks_app_20.elf_kernelsoftdds"
     },
   ],
+  "inputs": [
+    {
+      "id": "package_name",
+      "type": "promptString",
+      "description": "ros2 package name",
+      "default": "rclcpp"
+    },
+    {
+      "id": "package_executable",
+      "type": "promptString",
+      "description": "ros2 package executable",
+      "default": "test_expand_topic_or_service_name"
+    }
+  ]
 }
