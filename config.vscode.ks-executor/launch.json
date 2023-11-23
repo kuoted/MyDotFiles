@@ -31,7 +31,7 @@
       "request": "launch",
       "program": "${workspaceFolder}/ws/build/rclcpp/test/rclcpp/${input:package_executable}",
       "args": [],
-      "stopAtEntry": true,
+      "stopAtEntry": false,
       "cwd": "${workspaceFolder}",
       "environment": [],
       "preLaunchTask": "",

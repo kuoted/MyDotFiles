@@ -59,3 +59,4 @@ export RCUTILS_COLORIZED_OUTPUT=1
 export RCUTILS_CONSOLE_OUTPUT_FORMAT="[{severity} {time}] [{name}]: {message} ({function_name}() at {file_name}:{line_number})"
 export https_proxy=http://172.26.192.7:7890 http_proxy=http://172.26.192.7:7890
 
+gcovr -r src/stdROS/rclcpp/rclcpp -f src/stdROS/rclcpp/rclcpp/src/ -f src/stdROS/rclcpp/rclcpp/include --exclude-directories test/rclcpp -e test_* unit_test_ws/build/rclcpp/ --decisions --html 1.html
