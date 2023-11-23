@@ -44,6 +44,7 @@ git config --global --add oh-my-zsh.hide-dirty 1
 git config --global --add oh-my-zsh.hide-status 1
 git config --global pager.branch false
 git config --global pager.reflog false
+git config --global pager.log less
 
 
 lttng create em_tracing --output=`pwd`/em_trace/`date +%Y%m%dT%H-%M-%S`
