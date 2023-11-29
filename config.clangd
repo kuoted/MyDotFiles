@@ -42,6 +42,7 @@ Diagnostics:
         readability-convert-member-functions-to-static,
         readability-function-cognitive-complexity,
         modernize-concat-nested-namespaces,
+        modernize-use-default-member-init,
       ]
     CheckOptions:
       bugprone-assert-side-effect.AssertMacros: assert,DCHECK

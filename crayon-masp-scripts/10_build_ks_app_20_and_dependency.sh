@@ -38,28 +38,34 @@ export MAKEFLAGS='VERBOSE=1'
 
 if [ -d $WORK_DIR/ws ] && [ -d $WORK_DIR/ws ]; then
   cd $WORK_DIR/ws && colcon build --symlink-install \
-    --event-handlers compile_commands+ console_direct- console_cohesion- \
-    --cmake-args -DTRACETOOLS_DISABLE=OFF \
+    --merge-install \
+    --event-handlers \
+    compile_commands+ \
+    console_direct+ \
+    console_cohesion+ \
+    --cmake-args -DTRACETOOLS_DISABLE=ON \
     -DCMAKE_BUILD_TYPE:STRING=Debug \
-    -DBUILD_TESTING=ON \
+    -DBUILD_TESTING=OFF \
     -DCMAKE_EXPORT_COMPILE_COMMANDS=1 \
     -DCMAKE_VERBOSE_MAKEFILE=OFF \
-    -DPICAS=TRUE \
+    -DAPPEND_PROJECT_NAME_TO_INCLUDEDIR=ON \
     --no-warn-unused-cli \
     --base-paths \
     $WORK_DIR/src/stdROS \
     $WORK_DIR/src/otrs \
     $WORK_DIR/src/thirdparty/kernelsoftdds \
     --packages-select \
-    rclcpp
+    rclcpp \
+    examples_rclcpp_multithreaded_executor
 
   cd -
 else
   echo "error occured."
 fi
 
-    # rclcpp_action \
+# rclcpp_action \
+# -DPICAS=TRUE \
 # --packages-skip-build-finished \
-#  --packages-up-to \
-#--packages-skip-build-finished \
+# --packages-up-to \
+# --packages-skip-build-finished \
 #colcon build  --symlink-install --event-handlers compile_commands+ console_direct+ console_cohesion+    --cmake-args -DTRACETOOLS_DISABLE=ON -DCMAKE_BUILD_TYPE:STRING=Debug -DBUILD_TESTING=OFF -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -DCMAKE_VERBOSE_MAKEFILE=OFF --no-warn-unused-cli  --base-paths /home/kuoted/01_work/04_crayon-masp/dev/src/* --packages-up-to ks_executor ros2cli_build_stub irobot_events_executor

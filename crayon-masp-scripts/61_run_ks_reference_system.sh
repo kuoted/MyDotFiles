@@ -79,6 +79,7 @@ export RCUTILS_CONSOLE_OUTPUT_FORMAT="[{severity} {time}] [{name}]: {message} ({
 export RCUTILS_CONSOLE_OUTPUT_FORMAT="[{severity} {time}] [{name}]: {message}"
 export ROS_HOME=$WORK_DIR/ws/report
 colcon test \
+  --merge-install \
   --event-handlers compile_commands+ console_direct+ console_cohesion+ \
   --base-paths \
   $WORK_DIR/src/* \
