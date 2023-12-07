@@ -81,8 +81,7 @@
       "type": "cppdbg",
       "request": "launch",
       //  "preLaunchTask": "colcon: build(debug)",
-      // "program": "${workspaceFolder}/ws/install/ks_app_20/lib/ks_app_20/ks_app_20.elf",
-      "program": "${workspaceFolder}/ws/install/autoware_reference_system/lib/autoware_reference_system/autoware_default_ks_executor",
+      "program": "${workspaceFolder}/ws/install/ks_app_30/lib/ks_app_30/ks_app_30.elf",
       "args": [
         "-p",
         "630demo-schedule-other",
@@ -158,7 +157,7 @@
       "type": "cppdbg",
       "request": "launch",
       //  "preLaunchTask": "colcon: build(debug)",
-      "program": "${workspaceFolder}/ws/install/ks_app_20/lib/ks_app_20/ks_app_20.elf",
+      "program": "${workspaceFolder}/ws/install/ks_app_30/lib/ks_app_30/ks_app_30.elf",
       "args": [
         "-p",
         "630demo",

@@ -38,11 +38,13 @@ Diagnostics:
       [
         modernize-use-trailing-return-type,
         modernize-avoid-c-arrays,
-        # modernize-use-using,
         readability-convert-member-functions-to-static,
         readability-function-cognitive-complexity,
         modernize-concat-nested-namespaces,
         modernize-use-default-member-init,
+
+        bugprone-reserved-identifier,
+        modernize-use-using,
       ]
     CheckOptions:
       bugprone-assert-side-effect.AssertMacros: assert,DCHECK
