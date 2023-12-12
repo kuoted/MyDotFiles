@@ -143,12 +143,12 @@ elif [[ $ID =~ "Ubuntu" || $PRETTY_NAME =~ "Ubuntu" ]]; then
     # export DEFAULT_RMW_IMPLEMENTATION=rmw_fastrtps_cpp
 
     export ROS_DISTRO=humble
-    export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
-    export DEFAULT_RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+    #export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+    #export DEFAULT_RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
     export KS_EXECUTOR_CONF_PATH='/home/kuoted/01_work/04_crayon-masp/dev/src/stdROS/ks_executor'
     export KS_EXECUTOR_CONF_PATH='/home/kuoted/01_work/04_crayon-masp/dev/src/stdROS/ks_extention/ks-reference-system/'
   elif [ $VERSION_ID =~ "22.04" ]; then
-    export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+    #export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
     export PATH="/usr/local/cuda/bin:$PATH"
     export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
     xhost +
@@ -194,3 +194,4 @@ export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
 
 export HOMEBREW_API_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api"
 export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
+export ROS_DISABLE_LOANED_MESSAGES=1

@@ -39,7 +39,7 @@ Diagnostics:
         modernize-use-trailing-return-type,
         modernize-avoid-c-arrays,
         readability-convert-member-functions-to-static,
-        readability-function-cognitive-complexity,
+#        readability-function-cognitive-complexity,
         modernize-concat-nested-namespaces,
         modernize-use-default-member-init,
 
@@ -59,6 +59,7 @@ Diagnostics:
       readability-identifier-naming.ConstexprVariableCase: aNy_CasE
       readability-identifier-naming.GlobalConstantCase: aNy_CasE
       readability-identifier-length.MinimumVariableNameLength: 2
+      readability-function-cognitive-complexity.Threshold: 20
       modernize-use-using.IgnoreMacros: true
       # readability-identifier-naming.VariableCase: lower_case
       # readability-identifier-naming.VariableCase: lower_case
