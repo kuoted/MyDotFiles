@@ -16,14 +16,22 @@ if [ -d $WORK_DIR/ws ] && [ -d $WORK_DIR/ws ]; then
   #export MAKEFLAGS='VERBOSE=1'
   cd $WORK_DIR/ws && colcon build --symlink-install \
     --event-handlers compile_commands+ console_direct- console_cohesion- \
-    --cmake-args -DTRACETOOLS_DISABLE=ON \
+    --cmake-args \
     -DCMAKE_BUILD_TYPE:STRING=Debug \
-    -DBUILD_TESTING=ON \
     -DCMAKE_EXPORT_COMPILE_COMMANDS=1 \
     -DCMAKE_VERBOSE_MAKEFILE=OFF \
+    -DBUILD_TESTING=ON \
+    -DTRACETOOLS_DISABLE=ON \
+    -DSKIP_TRACING=TRUE \
     --no-warn-unused-cli \
-    --base-paths $WORK_DIR/src/* $WORK_DIR/src/thirdparty/kernelsoftdds $WORK_DIR/src/thirdparty/ks-reference-system \
-    --packages-up-to ament_cmake_auto autoware_reference_system
+    --base-paths \
+    $WORK_DIR/src/* \
+    $WORK_DIR/src/thirdparty/kernelsoftdds \
+    $WORK_DIR/src/thirdparty/ks-reference-system \
+    --packages-up-to \
+    kernelsoftdds \
+    rmw_kernelsoftdds_cpp \
+    autoware_reference_system
   cd -
 else
   echo "error occured."

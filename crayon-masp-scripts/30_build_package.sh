@@ -39,26 +39,31 @@ export MAKEFLAGS='VERBOSE=1'
 
 if [ -d $WORK_DIR/ws ] && [ -d $WORK_DIR/ws ]; then
   cd $WORK_DIR/ws && colcon build --symlink-install \
-    --event-handlers compile_commands+ console_direct- console_cohesion- \
-    --cmake-args -DTRACETOOLS_DISABLED=ON \
+    --event-handlers \
+    compile_commands+ \
+    console_direct- \
+    console_cohesion- \
+    --cmake-args \
+    -DTRACETOOLS_DISABLE=OFF \
     -DCMAKE_BUILD_TYPE:STRING=Debug \
-    -DBUILD_TESTING=OFF \
+    -DBUILD_TESTING=ON \
     -DCMAKE_EXPORT_COMPILE_COMMANDS=1 \
+    -DRUN_BENCHMARK=ON \
+    -DALL_RMWS=ON \
+    -DENABLE_SHM=ON \
     -DCMAKE_VERBOSE_MAKEFILE=OFF \
     --no-warn-unused-cli \
     --base-paths \
     $WORK_DIR/src/stdROS \
     $WORK_DIR/src/otrs \
     $WORK_DIR/src/thirdparty/kernelsoftdds \
-    --packages-up-to \
-    $@
+    --packages-select $@
 
   cd -
 else
   echo "error occured."
 fi
 
-# --packages-select \
 # --packages-up-to \
 #--packages-skip-build-finished \
 #colcon build  --symlink-install --event-handlers compile_commands+ console_direct+ console_cohesion+    --cmake-args -DTRACETOOLS_DISABLE=ON -DCMAKE_BUILD_TYPE:STRING=Debug -DBUILD_TESTING=OFF -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -DCMAKE_VERBOSE_MAKEFILE=OFF --no-warn-unused-cli  --base-paths /home/kuoted/01_work/04_crayon-masp/dev/src/* --packages-up-to ks_executor ros2cli_build_stub irobot_events_executor

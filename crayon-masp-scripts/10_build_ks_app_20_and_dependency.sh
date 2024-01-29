@@ -35,37 +35,49 @@ mkdir -p $WORK_DIR/ws
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH
 
 export MAKEFLAGS='VERBOSE=1'
+export RMW_IMPLEMENTATION=rmw_kernelsoftdds_cpp
+export DEFAULT_RMW_IMPLEMENTATION=rmw_kernelsoftdds_cpp
 
 if [ -d $WORK_DIR/ws ] && [ -d $WORK_DIR/ws ]; then
   cd $WORK_DIR/ws && colcon build --symlink-install \
-    --merge-install \
     --event-handlers \
     compile_commands+ \
-    console_direct+ \
-    console_cohesion+ \
-    --cmake-args -DTRACETOOLS_DISABLE=ON \
+    console_direct- \
+    console_cohesion- \
+    --cmake-args \
+    -DTRACETOOLS_DISABLE=OFF \
     -DCMAKE_BUILD_TYPE:STRING=Debug \
-    -DBUILD_TESTING=OFF \
+    -DBUILD_TESTING=ON \
     -DCMAKE_EXPORT_COMPILE_COMMANDS=1 \
+    -DRUN_BENCHMARK=ON \
+    -DALL_RMWS=ON \
+    -DENABLE_SHM=ON \
     -DCMAKE_VERBOSE_MAKEFILE=OFF \
-    -DAPPEND_PROJECT_NAME_TO_INCLUDEDIR=ON \
     --no-warn-unused-cli \
     --base-paths \
-    $WORK_DIR/src/stdROS \
+    $WORK_DIR/src/ \
     $WORK_DIR/src/otrs \
+    $WORK_DIR/src/stdROS \
+    $WORK_DIR/src/stdROS/rmw_kernelsoftdds \
     $WORK_DIR/src/thirdparty/kernelsoftdds \
-    --packages-select \
+    --packages-up-to \
     rclcpp \
-    examples_rclcpp_multithreaded_executor
+    kernelsoftdds \
+    demo_nodes_cpp \
+    examples_rclcpp_minimal_publisher \
+    examples_rclcpp_minimal_subscriber \
+    ks_app_20
 
   cd -
 else
   echo "error occured."
 fi
 
-# rclcpp_action \
-# -DPICAS=TRUE \
-# --packages-skip-build-finished \
-# --packages-up-to \
-# --packages-skip-build-finished \
+# ks_app_30 \
+# rmw_connextdds \
+# rmw_kernelsoftdds_cpp \
+# examples_rclcpp_minimal_subscriber
+# picas_single_executor \
+# picas_multi_executor \
+#--packages-skip-build-finished \
 #colcon build  --symlink-install --event-handlers compile_commands+ console_direct+ console_cohesion+    --cmake-args -DTRACETOOLS_DISABLE=ON -DCMAKE_BUILD_TYPE:STRING=Debug -DBUILD_TESTING=OFF -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -DCMAKE_VERBOSE_MAKEFILE=OFF --no-warn-unused-cli  --base-paths /home/kuoted/01_work/04_crayon-masp/dev/src/* --packages-up-to ks_executor ros2cli_build_stub irobot_events_executor

@@ -83,3 +83,7 @@ ros2 run ks_app_20 ks_app_20.elf -p 630demo \
   -d dag/cyclic-BehaviorPlanner.dag \
   -d dag/transform-MPCController.dag \
   -d dag/fusion-VehicleInterface.dag
+
+# export RMW_IMPLEMENTATION=rmw_kernelsoftdds_cpp
+# ros2 service call /test/add_two_ints example_interfaces/srv/AddTwoInts "{a: 3,b: 4}" 
+# ros2 topic pub /topic/process/ctrl std_msgs/msg/String '{data: close}'
