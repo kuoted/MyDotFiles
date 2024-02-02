@@ -54,30 +54,6 @@
       "envFile": "${workspaceFolder}/.vscode/env_launch_ros2.ks_app_20.elf_kernelsoftdds",
     },
     {
-      "name": "ros2 debug",
-      "type": "cppdbg",
-      "request": "launch",
-      "program": "${workspaceFolder}/ws/install/${input:package_name}/lib/${input:package_name}/${input:package_executable}",
-      "args": [],
-      "stopAtEntry": true,
-      "cwd": "${workspaceFolder}",
-      "environment": [],
-      "externalConsole": false,
-      "MIMode": "gdb",
-      "setupCommands": [
-        {
-          "description": "Enable pretty-printing for gdb",
-          "text": "-enable-pretty-printing",
-          "ignoreFailures": true
-        },
-        {
-          "description": "Set Disassembly Flavor to Intel",
-          "text": "-gdb-set disassembly-flavor intel",
-          "ignoreFailures": true
-        }
-      ]
-    },
-    {
       //launch debug via SSH on remote virtualbox,
       "name": "(gdb) Launch ks-executor 630demo kernelsoftdds",
       "type": "cppdbg",
@@ -114,6 +90,44 @@
         },
       ],
       "envFile": "${workspaceFolder}/.vscode/env_launch_ros2.ks_app_20.elf_kernelsoftdds",
+    },
+    {
+      //launch debug via SSH on remote virtualbox,
+      "name": "(gdb) Launch ks-executor 630demo fastdds",
+      "type": "cppdbg",
+      "request": "launch",
+      //  "preLaunchTask": "colcon: build(debug)",
+      "program": "${workspaceFolder}/ws/install/ks_app_20/lib/ks_app_20/ks_app_20.elf",
+      "args": [
+        "-p",
+        "630demo",
+        "-d",
+        "dag/sensor-Lanelet2Map.dag",
+        "-d",
+        "dag/fusion-Lanelet2MapLoader.dag",
+        "-d",
+        "dag/transform-LanePlanner.dag",
+        "-d",
+        "dag/transform-ParkingPlanner.dag",
+        "-d",
+        "dag/cyclic-BehaviorPlanner.dag",
+        "-d",
+        "dag/transform-MPCController.dag",
+        "-d",
+        "dag/fusion-VehicleInterface.dag"
+      ],
+      "stopAtEntry": true,
+      "cwd": "${workspaceFolder}",
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        },
+      ],
+      "envFile": "${workspaceFolder}/.vscode/env_launch_ros2.ks_app_20.elf_fastdds"
     },
     {
       //launch debug via SSH on remote virtualbox,
@@ -155,11 +169,11 @@
     },
     {
       //launch debug via SSH on remote virtualbox,
-      "name": "(gdb) Launch ks-executor 630demo fastdds",
+      "name": "(gdb) Launch ks-executor 630demo iceoryx",
       "type": "cppdbg",
       "request": "launch",
       //  "preLaunchTask": "colcon: build(debug)",
-      "program": "${workspaceFolder}/ws/install/ks_app_30/lib/ks_app_30/ks_app_30.elf",
+      "program": "${workspaceFolder}/ws/install/iceoryx_examples/bin/iox-cpp-publisher",
       "args": [
         "-p",
         "630demo",
@@ -189,7 +203,7 @@
           "ignoreFailures": true
         },
       ],
-      "envFile": "${workspaceFolder}/.vscode/env_launch_ros2.ks_app_20.elf_fastdds",
+      "envFile": "${workspaceFolder}/.vscode/env_launch_ros2.ks_app_20.elf_iceoryx",
     },
     {
       //launch debug via SSH on remote virtualbox,
