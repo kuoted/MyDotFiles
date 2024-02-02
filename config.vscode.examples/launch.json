@@ -1,0 +1,213 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "presentation": "group",
+  "configurations": [
+    {
+      // Example launch of a python file
+      "name": "Python: Current File (Integrated Terminal)",
+      "type": "python",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal",
+      // "stopAtEntry": true,
+      "cwd": "${workspaceFolder}",
+      "autoReload": {
+        "enable": true
+      },
+      "envFile": "${workspaceFolder}/.vscode/env_launch_ros2"
+    },
+    {
+      "name": "ros2 test debug",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/ws/build/rcl/test/${input:package_executable}",
+      // "program": "${workspaceFolder}/ws/build/rclcpp/test/rclcpp/${input:package_executable}",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "preLaunchTask": "",
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        },
+        {
+          "description": "Set Disassembly Flavor to Intel",
+          "text": "-gdb-set disassembly-flavor intel",
+          "ignoreFailures": true
+        }
+      ],
+      // "envFile": "${workspaceFolder}/.vscode/env_launch_ros2.ks_app_20.elf_cyclonedds"
+      "envFile": "${workspaceFolder}/.vscode/env_launch_ros2.ks_app_20.elf_kernelsoftdds",
+    },
+    {
+      "name": "(ROS2) Launch examples kernelsoftdds",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/ws/install/${input:package_name}/lib/${input:package_name}/${input:package_executable}",
+      "args": [],
+      "stopAtEntry": true,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        },
+        {
+          "description": "Set Disassembly Flavor to Intel",
+          "text": "-gdb-set disassembly-flavor intel",
+          "ignoreFailures": true
+        }
+      ],
+      "envFile": "${workspaceFolder}/.vscode/env_launch_ros2.ks_app_20.elf_kernelsoftdds",
+    },
+    {
+      //launch debug via SSH on remote virtualbox,
+      "name": "(gdb) Launch ks-executor 630demo fastdds",
+      "type": "cppdbg",
+      "request": "launch",
+      //  "preLaunchTask": "colcon: build(debug)",
+      "program": "${workspaceFolder}/ws/install/ks_app_30/lib/ks_app_30/ks_app_30.elf",
+      "args": [
+        "-p",
+        "630demo",
+        "-d",
+        "dag/sensor-Lanelet2Map.dag",
+        "-d",
+        "dag/fusion-Lanelet2MapLoader.dag",
+        "-d",
+        "dag/transform-LanePlanner.dag",
+        "-d",
+        "dag/transform-ParkingPlanner.dag",
+        "-d",
+        "dag/cyclic-BehaviorPlanner.dag",
+        "-d",
+        "dag/transform-MPCController.dag",
+        "-d",
+        "dag/fusion-VehicleInterface.dag"
+      ],
+      "stopAtEntry": true,
+      "cwd": "${workspaceFolder}",
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        },
+      ],
+      "envFile": "${workspaceFolder}/.vscode/env_launch_ros2.ks_app_20.elf_fastdds",
+    },
+    {
+      //launch debug via SSH on remote virtualbox,
+      "name": "(gdb) Launch ks-executor 630demo cyclonedds",
+      "type": "cppdbg",
+      "request": "launch",
+      //  "preLaunchTask": "colcon: build(debug)",
+      "program": "${workspaceFolder}/ws/install/ks_app_20/lib/ks_app_20/ks_app_20.elf",
+      "args": [
+        "-p",
+        "630demo",
+        "-d",
+        "dag/sensor-Lanelet2Map.dag",
+        "-d",
+        "dag/fusion-Lanelet2MapLoader.dag",
+        "-d",
+        "dag/transform-LanePlanner.dag",
+        "-d",
+        "dag/transform-ParkingPlanner.dag",
+        "-d",
+        "dag/cyclic-BehaviorPlanner.dag",
+        "-d",
+        "dag/transform-MPCController.dag",
+        "-d",
+        "dag/fusion-VehicleInterface.dag"
+      ],
+      "stopAtEntry": true,
+      "cwd": "${workspaceFolder}",
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        },
+      ],
+      "envFile": "${workspaceFolder}/.vscode/env_launch_ros2.ks_app_20.elf_cyclonedds"
+    },
+    {
+      //launch debug via SSH on remote virtualbox,
+      "name": "(gdb) Launch ks-executor-intraprocess test",
+      "type": "cppdbg",
+      "request": "launch",
+      //  "preLaunchTask": "colcon: build(debug)",
+      "program": "${workspaceFolder}/ws/install/ks_executor/lib/ks_executor/ks_sub_intraprocess_test.elf",
+      "args": [],
+      "stopAtEntry": true,
+      "cwd": "${workspaceFolder}",
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        },
+      ],
+      "envFile": "${workspaceFolder}/.vscode/env_launch_ros2.ks_executor"
+    },
+    {
+      //launch debug via SSH on remote virtualbox,
+      "name": "(gdb) Launch autoware_default_ks_executor",
+      "type": "cppdbg",
+      "request": "launch",
+      //  "preLaunchTask": "colcon: build(debug)",
+      "program": "${workspaceFolder}/ws/install/autoware_reference_system/lib/autoware_reference_system/autoware_default_ks_executor",
+      "args": [],
+      "stopAtEntry": true,
+      "cwd": "${workspaceFolder}",
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        },
+      ],
+      "envFile": "${workspaceFolder}/.vscode/env_launch_ros2.ks_app_20.elf_kernelsoftdds"
+    },
+  ],
+  "inputs": [
+    {
+      "id": "package_name",
+      "type": "promptString",
+      "description": "ros2 package name",
+      // "default": "examples_rclcpp_minimal_subscriber"
+      "default": "ks_app_20"
+      // "default": "examples_rclcpp_minimal_publisher"
+    },
+    {
+      "id": "package_executable",
+      "type": "promptString",
+      "description": "ros2 package executable",
+      // "default": "subscriber_member_function_with_unique_network_flow_endpoints"
+      "default": "ks_app_21.elf"
+      // "default": "subscriber_lambda"
+      // "default": "publisher_lambda"
+    }
+  ]
+}

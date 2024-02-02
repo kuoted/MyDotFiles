@@ -1,8 +1,0 @@
-<KernelSoftDDS>
-  <Domain>
-    <SharedMemory>
-      <Enable>false</Enable>
-      <LogLevel>verbose</LogLevel>
-    </SharedMemory>
-  </Domain>
-</KernelSoftDDS>
