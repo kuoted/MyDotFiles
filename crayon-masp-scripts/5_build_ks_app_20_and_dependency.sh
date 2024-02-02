@@ -31,46 +31,47 @@ if [ ! -d "$WORK_DIR" ]; then
   exit -1
 fi
 mkdir -p $WORK_DIR/ws
+
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH
+
+export MAKEFLAGS='VERBOSE=1'
 
 if [ -d $WORK_DIR/ws ] && [ -d $WORK_DIR/ws ]; then
   cd $WORK_DIR/ws && colcon build --symlink-install \
-    --event-handlers compile_commands+ console_direct- console_cohesion- \
-    --cmake-args -DTRACETOOLS_DISABLED=ON \
+    --event-handlers \
+    compile_commands+ \
+    console_direct- \
+    console_cohesion- \
+    --cmake-args \
+    -DTRACETOOLS_DISABLE=OFF \
     -DCMAKE_BUILD_TYPE:STRING=Debug \
-    -DBUILD_TESTING=OFF \
+    -DBUILD_TESTING=ON \
     -DCMAKE_EXPORT_COMPILE_COMMANDS=1 \
+    -DRUN_BENCHMARK=ON \
+    -DALL_RMWS=ON \
+    -DENABLE_SHM=ON \
     -DCMAKE_VERBOSE_MAKEFILE=OFF \
     --no-warn-unused-cli \
-    --base-paths $WORK_DIR/src \
+    --base-paths \
+    $WORK_DIR/src/stdROS \
+    $WORK_DIR/src/otrs \
+    $WORK_DIR/src/thirdparty \
     --packages-up-to \
+    ks_app_20 \
+    ks_app_30 \
+    rmw_kernelsoftdds_cpp \
+    kernelsoftdds \
     rmw_connextdds \
-    rmw_fastrtps_cpp \
-    rmw_cyclonedds_cpp \
-    launch_xml \
-    launch_yaml \
-    ros2action \
-    ros2cli \
-    ros2component \
-    ros2doctor \
-    ros2interface \
-    ros2launch \
-    ros2lifecycle \
-    ros2multicast \
-    ros2node \
-    ros2param \
-    ros2pkg \
-    ros2run \
-    ros2service \
-    ros2topic \
-    ros2trace \
-    demo_nodes_cpp \
-    demo_nodes_py
+    iceoryx_examples \
+    examples_rclcpp_minimal_subscriber
 
   cd -
 else
   echo "error occured."
 fi
 
+# picas_single_executor \
+# picas_multi_executor \
 #--packages-skip-build-finished \
+# $WORK_DIR/src/thirdparty/kernelsoftdds \
 #colcon build  --symlink-install --event-handlers compile_commands+ console_direct+ console_cohesion+    --cmake-args -DTRACETOOLS_DISABLE=ON -DCMAKE_BUILD_TYPE:STRING=Debug -DBUILD_TESTING=OFF -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -DCMAKE_VERBOSE_MAKEFILE=OFF --no-warn-unused-cli  --base-paths /home/kuoted/01_work/04_crayon-masp/dev/src/* --packages-up-to ks_executor ros2cli_build_stub irobot_events_executor

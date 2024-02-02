@@ -32,33 +32,51 @@ if [ ! -d "$WORK_DIR" ]; then
 fi
 mkdir -p $WORK_DIR/ws
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH
-export ROS_PYTHON_VERSION=3
-export ROS_VERSION=2
-export ROS_DISTRO=humble
-export MAKEFLAGS='VERBOSE=1'
 
+export MAKEFLAGS='VERBOSE=1'
 if [ -d $WORK_DIR/ws ] && [ -d $WORK_DIR/ws ]; then
   cd $WORK_DIR/ws && colcon build --symlink-install \
     --event-handlers compile_commands+ console_direct- console_cohesion- \
-    --cmake-args -DTRACETOOLS_DISABLED=ON \
+    --cmake-args -DTRACETOOLS_DISABLED=OFF \
     -DCMAKE_BUILD_TYPE:STRING=Debug \
     -DBUILD_TESTING=OFF \
     -DCMAKE_EXPORT_COMPILE_COMMANDS=1 \
-    -DCMAKE_VERBOSE_MAKEFILE=OFF \
+    -DCMAKE_VERBOSE_MAKEFILE=ON \
     --no-warn-unused-cli \
     --base-paths \
     $WORK_DIR/src/stdROS \
     $WORK_DIR/src/otrs \
-    $WORK_DIR/src/thirdparty/kernelsoftdds \
+    $WORK_DIR/src/thirdparty \
     --packages-up-to \
-    $@
+    rmw_kernelsoftdds_cpp \
+    launch_xml \
+    launch_yaml \
+    ros2action \
+    ros2cli \
+    ros2component \
+    ros2doctor \
+    ros2interface \
+    ros2launch \
+    ros2lifecycle \
+    ros2multicast \
+    ros2node \
+    ros2param \
+    ros2pkg \
+    ros2run \
+    ros2service \
+    ros2topic \
+    ros2trace \
+    ament_clang_format \
+    demo_nodes_cpp
 
   cd -
 else
   echo "error occured."
 fi
 
-# --packages-select \
-# --packages-up-to \
+# rmw_connextdds \
+# rmw_fastrtps_cpp \
+# rmw_cyclonedds_cpp \
+# demo_nodes_py
 #--packages-skip-build-finished \
 #colcon build  --symlink-install --event-handlers compile_commands+ console_direct+ console_cohesion+    --cmake-args -DTRACETOOLS_DISABLE=ON -DCMAKE_BUILD_TYPE:STRING=Debug -DBUILD_TESTING=OFF -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -DCMAKE_VERBOSE_MAKEFILE=OFF --no-warn-unused-cli  --base-paths /home/kuoted/01_work/04_crayon-masp/dev/src/* --packages-up-to ks_executor ros2cli_build_stub irobot_events_executor

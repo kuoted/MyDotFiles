@@ -34,3 +34,4 @@ sed -i "s#https://github.com/ros2/pybind11_vendor.git#http://gitlab.ks.x/github_
 
 
 sed -i "s#https://github.com#https://ghproxy.com/https://github.com#g" src/stdROS/console_bridge_vendor/package.xml  src/stdROS/console_bridge_vendor/CMakeLists.txt
+

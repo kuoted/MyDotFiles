@@ -59,6 +59,9 @@ elif [ $1 -eq 3 ]; then
 elif [ $1 -eq 4 ]; then
   export RMW_IMPLEMENTATION=rmw_fastrtps_cpp
   debug_var_info=$WORK_DIR/.vscode/env_launch_ros2.ks_app_20.elf_fastdds
+elif [ $1 -eq 5 ]; then
+  export RMW_IMPLEMENTATION=rmw_iceoryx_cpp
+  debug_var_info=$WORK_DIR/.vscode/env_launch_ros2.ks_app_20.elf_iceoryx
 else
   export RMW_IMPLEMENTATION=rmw_kernelsoftdds_cpp
   debug_var_info=$WORK_DIR/.vscode/env_launch_ros2.ks_app_20.elf_kernelsoftdds
@@ -75,7 +78,9 @@ fi
 #export RCUTILS_CONSOLE_OUTPUT_FORMAT="[{severity} {time}] [{name}]: {message} ({function_name}() at {file_name}:{line_number})"
 export RCUTILS_CONSOLE_OUTPUT_FORMAT="[{severity} {time}] [{name}]: {message} ({file_name}:{line_number})"
 export RCUTILS_CONSOLE_OUTPUT_FORMAT="[{severity} {time}] [{name}]: {message}"
-ros2 run ks_app_20 ks_app_20.elf -p 630demo \
+
+ros2 run iceoryx_examples iox-cpp-subscriber
+ros2 run ks_app_30 ks_app_30.elf -p 630demo \
   -d dag/sensor-Lanelet2Map.dag \
   -d dag/fusion-Lanelet2MapLoader.dag \
   -d dag/transform-LanePlanner.dag \
@@ -83,3 +88,7 @@ ros2 run ks_app_20 ks_app_20.elf -p 630demo \
   -d dag/cyclic-BehaviorPlanner.dag \
   -d dag/transform-MPCController.dag \
   -d dag/fusion-VehicleInterface.dag
+
+# export RMW_IMPLEMENTATION=rmw_kernelsoftdds_cpp
+# ros2 service call /test/add_two_ints example_interfaces/srv/AddTwoInts "{a: 3,b: 4}"
+# ros2 topic pub /topic/process/ctrl std_msgs/msg/String '{data: close}'
