@@ -194,4 +194,4 @@ export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
 
 export HOMEBREW_API_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api"
 export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
-export ROS_DISABLE_LOANED_MESSAGES=1
+export ROS_DISABLE_LOANED_MESSAGES=0
