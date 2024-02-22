@@ -196,16 +196,16 @@
       "id": "package_name",
       "type": "promptString",
       "description": "ros2 package name",
-      // "default": "examples_rclcpp_minimal_subscriber"
-      "default": "ks_app_20"
+      "default": "examples_rclcpp_minimal_subscriber"
+      // "default": "ks_app_20"
       // "default": "examples_rclcpp_minimal_publisher"
     },
     {
       "id": "package_executable",
       "type": "promptString",
       "description": "ros2 package executable",
-      // "default": "subscriber_member_function_with_unique_network_flow_endpoints"
-      "default": "ks_app_21.elf"
+      "default": "subscriber_member_function_with_unique_network_flow_endpoints"
+      // "default": "ks_app_21.elf"
       // "default": "subscriber_lambda"
       // "default": "publisher_lambda"
     }
