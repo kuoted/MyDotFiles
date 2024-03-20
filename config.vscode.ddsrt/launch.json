@@ -1,0 +1,43 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "presentation": "group",
+  "configurations": [
+    {
+      // Example launch of a python file
+      "name": "Python: Current File (Integrated Terminal)",
+      "type": "python",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal",
+      "stopAtEntry": true,
+      "cwd": "${workspaceFolder}",
+      "autoReload": {
+        "enable": true
+      }
+    },
+    // Example gdb launch of a ros executable
+    {
+      "name": "(gdb) Launch rt-dds-sample_reference",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/install/rt-dds-sample_reference/examples/dcps/sample_reference",
+      "args": [],
+      //  "preLaunchTask": "colcon: build(debug)",
+      "stopAtEntry": true,
+      "cwd": "${workspaceFolder}",
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      "envFile": "${workspaceFolder}/.vscode/env_launch.rt-dds-sample_reference"
+    },
+  ],
+}
