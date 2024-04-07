@@ -6,26 +6,6 @@
   "presentation": "group",
   "configurations": [
     {
-      "name": "ROS: Launch via ssh",
-      "type": "ros",
-      "request": "launch",
-      "target": "${workspaceFolder}/04_GEEP50_0002_AppFw/install/cupcake/lib/cupcake/cupcake",
-    },
-    {
-      // Example launch of a python file
-      "name": "Python: Current File (Integrated Terminal)",
-      "type": "python",
-      "request": "launch",
-      "program": "${file}",
-      "console": "integratedTerminal",
-      // "stopAtEntry": true,
-      "cwd": "${workspaceFolder}",
-      "autoReload": {
-        "enable": true
-      },
-      "envFile": "${workspaceFolder}/.vscode/env_launch_ros2"
-    },
-    {
       "name": "ros2 test debug",
       "type": "cppdbg",
       "request": "launch",
@@ -288,6 +268,37 @@
         },
       ],
       "envFile": "${workspaceFolder}/.vscode/env_launch_ros2.ks_app_20.elf_kernelsoftdds"
+    },
+    {
+      //launch debug via SSH on remote virtualbox,
+      "name": "(gdb) Launch vsomeip examples",
+      "type": "cppdbg",
+      "request": "launch",
+      //  "preLaunchTask": "colcon: build(debug)",
+      "program": "${workspaceFolder}/ws/build/vsomeip/examples/response-sample",
+      "args": [],
+      "stopAtEntry": true,
+      "cwd": "${workspaceFolder}",
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        },
+      ],
+      "envFile": "${workspaceFolder}/.vscode/env_launch.vsomeip",
+      // "environment": [
+      //   {
+      //     "name": "VSOMEIP_APPLICATION_NAME",
+      //     "value": "service-sample",
+      //   },
+      //   {
+      //     "name": "VSOMEIP_CONFIGURATION",
+      //     "value": "${workspaceFolder}/src/thirdparty/vsomeip_github/config/vsomeip-local.json"
+      //   },
+      // ],
     },
   ],
   "inputs": [

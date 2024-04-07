@@ -45,6 +45,12 @@ git config --global --add oh-my-zsh.hide-status 1
 git config --global pager.branch false
 git config --global pager.reflog false
 git config --global pager.log less
+git config --global core.longpaths true
+git config --global core.autocrlf false
+git config --global core.filemode false
+# and for fun!
+git config --global color.ui true
+git config --global credential.helper store
 
 
 lttng create em_tracing --output=`pwd`/em_trace/`date +%Y%m%dT%H-%M-%S`
